@@ -541,7 +541,7 @@
         <button type="submit" class="submit-btn" id="leadSubmit">SEND ME THE PREVIEW →</button>
         </form>
         <a href="javascript:void(0)" class="skip" onclick="closeModal()">No thanks, just show me the preview</a>
-        <p class="priv-note">🔒 We keep it 100% — your info is never shared or sold.</p>
+        <p class="priv-note">🔒 We keep it 100% — your info is never shared or sold. <a href="./privacy.html" style="color:rgba(255,255,255,0.55);text-decoration:underline;">Privacy Policy</a></p>
       </div>
       <div class="modal-success" id="leadSuccess">
         <div class="big">🎉</div>
@@ -560,6 +560,7 @@
 
   <footer class="footer">
     <p>© 2026 Gideon Abochie • Yeshurun: The Upright One</p>
+    <p style="margin-top:6px;font-size:11px;"><a href="./privacy.html" style="color:rgba(255,255,255,0.5);">Privacy</a> · <a href="./terms.html" style="color:rgba(255,255,255,0.5);">Terms</a> · <a href="./refund.html" style="color:rgba(255,255,255,0.5);">Refunds</a></p>
   </footer>
 
   <nav class="bottombar">
@@ -606,7 +607,7 @@
       window.dataLayer = window.dataLayer || [];
       window.gtag = function(){ window.dataLayer.push(arguments); };
       window.gtag('js', new Date());
-      window.gtag('config', GA_ID, { send_page_view: true });
+      window.gtag('config', GA_ID, { send_page_view: true, debug_mode: /[?&]ga_debug=1/.test(location.search) || undefined });
     })();
 
     var AB = (function() {

@@ -15,6 +15,8 @@ Self-contained, mobile-first direct-response landing page. Zero external asset d
 ## Files
 - `index.html` - Landing/sales page
 - `preview.html` - Full free preview (reader)
+- `thankyou.html` - Post-purchase page (set as Selar purchase redirect; fires GA `purchase`)
+- `privacy.html` / `terms.html` / `refund.html` - Legal pages (put a real contact email in `INSERT_CONTACT_EMAIL`)
 - `cover.jpg` - Book cover (default/OG)
 - `covers/cover-1.jpg` … `cover-3.jpg` - A/B test cover variants (compressed for web)
 - `icon.svg` - App icon
@@ -42,7 +44,7 @@ Variants (`Book/Cover/AB_Variants/` holds the full-res PNGs):
 | cover3 | covers/cover-3.jpg | kids-parents (kids art, parent buyer) |
 
 ## Before Going Live
-Replace `INSERT_SELAR_LINK` and `INSERT_GA_ID` in `index.html` with your Selar product URL and GA4 measurement ID.
+Replace `INSERT_SELAR_LINK`, `INSERT_GA_ID` and `INSERT_CONTACT_EMAIL` in `index.html` + `thankyou.html` + the legal pages with your Selar product URL, GA4 measurement ID, and contact email. In Selar dashboard, set the product's redirect URL after purchase to `https://yes.gabochie.com/thankyou.html`.
 
 ## Test Locally
 Run a tiny local server (service workers need http, not file://):
