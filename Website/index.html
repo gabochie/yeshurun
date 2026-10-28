@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#050510">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Are You Still In Your Yaakov Season? | Free Preview</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050510;
+      --gold: #FFD93B;
+      --pink: #FF6B9D;
+      --purple: #A855F7;
+      --text: #FFFFFF;
+      --text-sub: rgba(255,255,255,0.85);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
+    html { scroll-behavior: smooth; overflow-x: hidden; overscroll-behavior: none; }
+    body {
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      background: radial-gradient(ellipse 120% 80% at 50% 0%, #1a0b2e 0%, #050510 60%, #000000 100%);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+      touch-action: pan-y;
+      overscroll-behavior: none;
+      -webkit-text-size-adjust: 100%;
+    }
+    .speaking {
+      border-left: 3px solid var(--gold) !important;
+      padding-left: 12px !important;
+      box-shadow: inset 0 0 0 3px rgba(255,217,59,0.06);
+      border-radius: 0 10px 10px 0;
+      animation: pulse 1.6s ease infinite;
+    }
+    h2.speaking, h1.speaking { color: var(--gold) !important; }
+    @keyframes pulse { 50% { box-shadow: inset 0 0 0 3px rgba(255,217,59,0.14); } }
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: calc(40px + env(safe-area-inset-top)) 16px calc(60px + env(safe-area-inset-bottom));
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -150px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(90vw, 700px);
+      height: min(90vw, 700px);
+      background: radial-gradient(circle, rgba(168,85,247,0.22) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: radial-gradient(ellipse, rgba(255,255,255,0.08) 0%, rgba(255,217,59,0.10) 40%, transparent 75%);
+      border: 1px solid rgba(255,217,59,0.55);
+      background: radial-gradient(ellipse, rgba(255,255,255,0.08) 0%, rgba(255,217,59,0.10) 40%, transparent 75%);
+      padding: 9px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 2;
+    }
+    .hero h1 {
+      font-family: 'Space Grotesk', 'Poppins', sans-serif;
+      font-size: clamp(34px, 9vw, 92px);
+      font-weight: 900;
+      line-height: 0.98;
+      margin-bottom: 18px;
+      letter-spacing: -0.03em;
+      position: relative;
+      z-index: 2;
+      padding: 0 8px;
+    }
+    .hero h1 .gradient {
+      background: linear-gradient(135deg, #FFD93B 0%, #FF6B9D 48%, #A855F7 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: block;
+    }
+    .hero-sub {
+      font-size: clamp(16px, 3.8vw, 24px);
+      color: var(--text-sub);
+      max-width: 680px;
+      margin: 0 auto 32px;
+      position: relative;
+      z-index: 2;
+      padding: 0 12px;
+    }
+    .cover-wrap {
+      margin: 26px auto 30px;
+      width: min(72vw, 320px);
+      position: relative;
+      z-index: 2;
+    }
+    .cover-frame {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.75), 0 0 70px rgba(168,85,247,0.3);
+      border: 1px solid rgba(255,217,59,0.65);
+      translate: 0 0;
+      transform: translateZ(0);
+    }
+    .cover-frame::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top, rgba(255,255,255,0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .cover-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      background: #0a0a18;
+    }
+    .cta-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #FFD93B 0%, #F59E0B 100%);
+      color: #000000;
+      text-decoration: none;
+      padding: 18px 36px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: clamp(17px, 4vw, 20px);
+      box-shadow: 0 12px 34px rgba(0,0,0,0.55), 0 0 44px rgba(255,217,59,0.25);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      position: relative;
+      z-index: 2;
+      border: 1px solid rgba(255,255,255,0.4);
+      text-align: center;
+      width: min(88vw, 360px);
+    }
+    .cta-primary:active { transform: scale(0.98); }
+    .cta-primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 16px 44px rgba(0,0,0,0.55), 0 0 60px rgba(255,217,59,0.35); }
+    .cta-subtext {
+      margin-top: 14px;
+      font-size: 13px;
+      opacity: 0.7;
+      position: relative;
+      z-index: 2;
+    }
+    .scroll-hint {
+      margin-top: 48px;
+      font-size: 11px;
+      opacity: 0.5;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 2;
+    }
+    .section {
+      max-width: min(92vw, 680px);
+      margin: 0 auto;
+      padding: 72px 0;
+      content-visibility: auto;
+      contain-intrinsic-size: auto 420px;
+    }
+    .section-inner { padding: 0 18px; }
+    .section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(30px, 7vw, 54px);
+      font-weight: 800;
+      margin-bottom: 26px;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+    .section p {
+      font-size: clamp(16px, 3.6vw, 19px);
+      color: var(--text-sub);
+      margin-bottom: 22px;
+    }
+    .highlight {
+      background: radial-gradient(circle at top, rgba(255,217,59,0.16) 0%, rgba(168,85,247,0.12) 100%);
+      border: 1px solid rgba(255,217,59,0.5);
+      padding: clamp(24px, 6vw, 36px);
+      border-radius: 22px;
+      margin: 36px 0;
+      text-align: center;
+      box-shadow: 0 16px 44px rgba(0,0,0,0.45);
+    }
+    .highlight-text {
+      font-size: clamp(19px, 5vw, 30px);
+      font-weight: 700;
+      font-family: 'Space Grotesk', sans-serif;
+      line-height: 1.6;
+    }
+    .cta-final {
+      text-align: center;
+      padding: clamp(80px, 16vw, 120px) 18px calc(100px + env(safe-area-inset-bottom));
+      position: relative;
+    }
+    .cta-final::before {
+      content: '';
+      position: absolute;
+      bottom: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(110vw, 900px);
+      height: min(80vw, 520px);
+      background: radial-gradient(ellipse, rgba(168,85,247,0.18) 0%, transparent 75%);
+      pointer-events: none;
+    }
+    .cta-final-inner { position: relative; z-index: 2; max-width: min(92vw, 760px); margin: 0 auto; }
+    .cta-final h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(34px, 8vw, 68px);
+      font-weight: 900;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+    .cta-final p {
+      font-size: clamp(17px, 4vw, 22px);
+      color: var(--text-sub);
+      margin-bottom: 34px;
+    }
+    .footer {
+      text-align: center;
+      padding: 30px 18px calc(110px + env(safe-area-inset-bottom));
+      opacity: 0.4;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .bottombar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      display: flex;
+      justify-content: space-around;
+      align-items: stretch;
+      background: rgba(10, 10, 24, 0.88);
+      backdrop-filter: blur(18px) saturate(140%);
+      -webkit-backdrop-filter: blur(18px) saturate(140%);
+      border-top: 1px solid rgba(255,217,59,0.35);
+      padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+      max-width: 560px;
+      margin: 0 auto;
+      border-radius: 18px 18px 0 0;
+    }
+    .bb-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 6px 14px;
+      border-radius: 12px;
+      transition: color 0.2s, background 0.2s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .bb-item:active { background: rgba(255,217,59,0.14); }
+    .bb-item .bb-ico { font-size: 20px; line-height: 1; }
+    .bb-item.active { color: var(--gold); }
+    .bb-item.primary { color: #000; background: linear-gradient(135deg, #FFD93B 0%, #F59E0B 100%); font-weight: 800;       box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 0 28px rgba(255,217,59,0.3); }
+    @media (min-width: 700px) { .bottombar { border-radius: 18px; margin-bottom: 14px; } }
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 100;
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal {
+      width: min(96vw, 480px);
+      max-height: 92svh;
+      overflow-y: auto;
+      background: linear-gradient(180deg, #141428 0%, #0a0a18 100%);
+      border: 1px solid rgba(255,217,59,0.5);
+      border-radius: 26px 26px 0 0;
+      padding: 28px 22px calc(26px + env(safe-area-inset-bottom));
+      box-shadow: 0 -30px 90px rgba(168,85,247,0.35);
+      animation: slideUp 0.3s ease;
+    }
+    @keyframes slideUp { from { transform: translateY(60px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .modal h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(22px, 6vw, 30px);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+    .modal h3 .gradient {
+      background: linear-gradient(135deg, #FFD93B 0%, #FF6B9D 60%, #A855F7 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .modal p.lead-note { font-size: 14px; color: var(--text-sub); margin-bottom: 20px; }
+    .modal input {
+      width: 100%;
+      padding: 15px 16px;
+      margin-bottom: 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.06);
+      color: #fff;
+      font-size: 16px;
+      font-family: 'Poppins', sans-serif;
+      outline: none;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+    }
+    .modal input:focus { border-color: var(--gold); }
+    .modal input::placeholder { color: rgba(255,255,255,0.4); }
+    .whatsapp-field { display: flex; gap: 8px; }
+    .whatsapp-field .cc {
+      width: 84px;
+      flex-shrink: 0;
+      text-align: center;
+    }
+    .modal .submit-btn {
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #FFD93B 0%, #F59E0B 100%);
+      color: #000;
+      font-size: 17px;
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+      margin-top: 6px;
+      box-shadow: 0 14px 40px rgba(255,217,59,0.35);
+      transition: transform 0.2s;
+      -webkit-appearance: none;
+    }
+    .modal .submit-btn:active { transform: scale(0.98); }
+    .modal .submit-btn[disabled] { opacity: 0.6; }
+    .modal .skip {
+      display: block;
+      text-align: center;
+      margin-top: 14px;
+      color: rgba(255,255,255,0.5);
+      font-size: 13px;
+      text-decoration: none;
+    }
+    .modal .priv-note { text-align: center; font-size: 11px; opacity: 0.45; margin-top: 10px; }
+    .modal-success { text-align: center; display: none; }
+    .modal-success .big { font-size: 44px; margin-bottom: 8px; }
+    .modal-success h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(22px, 6vw, 28px);
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .modal-success p { font-size: 14px; color: var(--text-sub); margin-bottom: 22px; }
+    .success-btn {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      padding: 15px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 16px;
+      margin-bottom: 12px;
+      font-family: 'Poppins', sans-serif;
+      -webkit-appearance: none;
+    }
+    .success-btn.gold { background: linear-gradient(135deg, #FFD93B 0%, #F59E0B 100%); color: #000; box-shadow: 0 12px 36px rgba(255,217,59,0.35); }
+    .success-btn.wa { background: #25D366; color: #04310f; border: none; }
+    .success-btn.wa img, .success-btn.wa svg { width: 20px; height: 20px; }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="badge">
+      <span>⚡</span>
+      <span>FREE PREVIEW</span>
+      <span>⚡</span>
+    </div>
+    <h1>
+      ARE YOU STILL IN YOUR
+      <span class="gradient">YAAKOV SEASON?</span>
+    </h1>
+    <p class="hero-sub">
+      God isn't finished with your story. The fight you're in right now is leading you to who He's called you to be.
+    </p>
+    <div class="cover-wrap">
+      <div class="cover-frame">
+        <img class="cover-img" src="./cover.jpg" alt="Yeshurun: The Upright One by Gideon Abochie book cover" width="1200" height="630" loading="eager" fetchpriority="high" decoding="async">
+      </div>
+    </div>
+    <a href="#preview" class="cta-primary" onclick="openModal(event)">
+      <span>GET THE FREE PREVIEW</span>
+      <span style="font-size: 22px;">→</span>
+    </a>
+    <p class="cta-subtext">Instant access • Read on your phone • No spam, ever</p>
+    <div class="scroll-hint">SCROLL TO DISCOVER</div>
+  </section>
+
+  <section class="section" id="preview">
+    <div class="section-inner">
+      <h2>The One Who Grabs The Heel</h2>
+      <p>Before he became Israel, he was known as <strong>Yaakov</strong> (יַעֲקֹב). The name means "heel-catcher" or "supplanter".</p>
+      <p>Jacob came into this world grabbing his twin brother Esau's heel. From day one, his life was a fight.</p>
+      <p>He fought for blessing. He fought for love. He fought to survive.</p>
+      <p><strong>Sound familiar?</strong></p>
+      <p>If you're grinding, striving, or fighting for everything right now... you know the Yaakov life.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <h2>The Night That Changed Everything</h2>
+      <p>One night, alone by the Jabbok River, Jacob wrestled. Not with a man, but with God (Genesis 32:22-28).</p>
+      <p>Bruised. Limping. Exhausted. He refused to let go until he was blessed.</p>
+      <div class="highlight">
+        <div class="highlight-text">
+          "Your name shall no longer be called Yaakov, but Israel; for you have struggled with God and with men, and have prevailed."<br>
+          <span style="font-size: clamp(14px, 3vw, 18px); opacity: 0.8;">— Genesis 32:28 NKJV</span>
+        </div>
+      </div>
+      <p><strong>Israel</strong> means "He who strives with God and prevails". God didn't erase Jacob. He renamed him. The limp remained as a reminder that He uses our scars.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <h2>God Has Another Name For You</h2>
+      <p>There's one more name: <strong>Yeshurun</strong> (יְשֻׁרוּן) — "The Upright One".</p>
+      <p>It's not a name earned by perfection. It's a name spoken in love.</p>
+      <p><strong>Yaakov</strong> = who you were in the fight<br>
+      <strong>Israel</strong> = who you're becoming as you wrestle with God<br>
+      <strong>Yeshurun</strong> = who God says you already are in His love</p>
+      <p>If you're crawling, He's calling you His. If you're fighting, He's blessing you. If you're limping, He's leading you.</p>
+    </div>
+  </section>
+
+  <section class="cta-final">
+    <div class="cta-final-inner">
+      <h2>WANT TO GO DEEPER?</h2>
+      <p>The full book <strong>Yeshurun: The Upright One</strong> by Gideon Abochie reveals your next step in this journey.</p>
+      <a href="INSERT_SELAR_LINK" class="cta-primary" onclick="trackBuy()">
+        <span>GET THE FULL BOOK NOW</span>
+        <span style="font-size: 22px;">→</span>
+    </a>
+    <p class="cta-subtext" style="margin-top: 18px;">Best for Ghana & African Diaspora • Instant Digital Access • $4.99</p>
+    </div>
+  </section>
+
+  <section class="section" id="not-ready">
+    <div class="section-inner" style="text-align:center;">
+      <h2 style="font-size:clamp(24px,5.5vw,40px);">Not ready to buy yet?</h2>
+      <p>Honest. Then take the free taste first — read the opening of the book on your phone, free, in under 5 minutes. If it moves you, the full book will be right here.</p>
+      <a href="javascript:void(0)" onclick="openModal(event)" class="cta-primary" style="width:auto;padding:14px 30px;font-size:clamp(15px,3.8vw,18px);"><span>👀 READ THE FREE PREVIEW</span></a>
+    </div>
+  </section>
+
+  <form name="leads" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name">
+    <input type="email" name="email">
+    <input type="tel" name="whatsapp">
+    <input type="text" name="source">
+  </form>
+
+  <div class="modal-backdrop" id="leadModal" onclick="if(event.target===this)closeModal()">
+    <div class="modal">
+      <div id="leadForm">
+        <h3>Unlock the <span class="gradient">FREE PREVIEW</span></h3>
+        <p class="lead-note">Where should we send your free preview? Grab it now — plus be first to know when the full book drops.</p>
+        <input type="text" id="fName" name="name" placeholder="Your first name" autocomplete="given-name">
+        <input type="email" id="fEmail" name="email" placeholder="Your email *" inputmode="email" autocomplete="email">
+        <div class="whatsapp-field">
+          <input type="tel" id="fCC" value="+233" aria-label="Country code" autocomplete="tel-country-code">
+          <input type="tel" id="fPhone" name="whatsapp" placeholder="WhatsApp number (optional)" inputmode="tel" autocomplete="tel-national">
+        </div>
+        <button class="submit-btn" onclick="submitLead()" id="leadSubmit">SEND ME THE PREVIEW →</button>
+        <a href="javascript:void(0)" class="skip" onclick="closeModal()">No thanks, just show me the preview</a>
+        <p class="priv-note">🔒 We keep it 100% — your info is never shared or sold.</p>
+      </div>
+      <div class="modal-success" id="leadSuccess">
+        <div class="big">🎉</div>
+        <h4>You're in!</h4>
+        <p id="successMsg">Your free preview is unlocked. A copy is also on its way to your email.</p>
+        <a href="INSERT_SELAR_LINK" class="success-btn gold" onclick="trackBuy()"><span>🛒 GET THE FULL BOOK NOW</span><span>→</span></a>
+        <a href="./preview.html" class="success-btn" style="background:rgba(255,255,255,0.08);color:#fff;border:1px solid rgba(255,217,59,0.55)"><span>or start with the FREE PREVIEW</span><span>👀</span></a>
+        <a id="waJoin" href="INSERT_WHATSAPP_CONTACT" target="_blank" rel="noopener" class="success-btn wa">
+          <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.7 6.4L3 29l6.8-1.7c1.9 1 4 1.6 6.2 1.6 7.2 0 13-5.8 13-13S23.2 3 16 3zm0 23.8c-2 0-3.9-.5-5.5-1.5l-.4-.2-4 1 1.1-3.9-.3-.4A10.7 10.7 0 015.2 16c0-6 4.9-10.8 10.8-10.8S26.8 10 26.8 16 21.9 26.8 16 26.8zm6.1-8.1c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.5s1.1 2.9 1.3 3.1c.2.2 2.2 3.4 5.3 4.7.7.3 1.3.5 1.8.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4l-.5-.3z"/></svg>
+          <span>JOIN THE WHATSAPP COMMUNITY</span>
+        </a>
+        <p class="priv-note">Everyone who joins gets our weekly WhatsApp devo. No spam.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2026 Gideon Abochie • Yeshurun: The Upright One</p>
+  </footer>
+
+  <nav class="bottombar">
+    <a href="./index.html" class="bb-item active">
+      <span class="bb-ico">📖</span>
+      <span>Home</span>
+    </a>
+    <a href="./preview.html" class="bb-item">
+      <span class="bb-ico">👀</span>
+      <span>Preview</span>
+    </a>
+    <a href="javascript:void(0)" onclick="openModal(event)" class="bb-item primary">
+      <span class="bb-ico">🎁</span>
+      <span>Free Book</span>
+    </a>
+    <a href="javascript:void(0)" class="bb-item" onclick="sharePage()">
+      <span class="bb-ico">🚀</span>
+      <span>Share</span>
+    </a>
+  </nav>
+
+  <nav class="bottombar">
+    <a href="./index.html" class="bb-item active">
+      <span class="bb-ico">📖</span>
+      <span>Home</span>
+    </a>
+    <a href="./preview.html" class="bb-item">
+      <span class="bb-ico">👀</span>
+      <span>Preview</span>
+    </a>
+    <a href="javascript:void(0)" onclick="openModal(event)" class="bb-item primary">
+      <span class="bb-ico">🎁</span>
+      <span>Free Book</span>
+    </a>
+    <a href="javascript:void(0)" class="bb-item" id="listenBtn" onclick="toggleListen()">
+      <span class="bb-ico" id="listenIco">🔊</span>
+      <span id="listenLbl">Listen</span>
+    </a>
+    <a href="javascript:void(0)" class="bb-item" onclick="sharePage()">
+      <span class="bb-ico">🚀</span>
+      <span>Share</span>
+    </a>
+  </nav>
+
+  <script>
+    var TTS = { playing: false, items: [], idx: 0 };
+
+    function buildList() {
+      TTS.items = [];
+      var seq = document.querySelectorAll('.hero .badge, .hero h1, .hero-sub, .section .section-inner h2, .section .section-inner > p, .section .highlight, .cta-final h2, .cta-final p');
+      [].forEach.call(seq, function(el) {
+        var t = el.textContent.trim();
+        if (t) TTS.items.push({ el: el, text: t });
+      });
+    }
+
+    function clearSpeakMarks() {
+      document.querySelectorAll('.speaking').forEach(function(el) { el.classList.remove('speaking'); });
+    }
+
+    function highlight(el) {
+      clearSpeakMarks();
+      el.classList.add('speaking');
+      try { el.scrollIntoView({ block: 'center', behavior: 'smooth' }); } catch(e) { el.scrollIntoView(true); }
+    }
+
+    function speakNext() {
+      if (!TTS.playing) return;
+      if (TTS.idx >= TTS.items.length) { stopListen(); return; }
+      var item = TTS.items[TTS.idx];
+      highlight(item.el);
+      var u = new SpeechSynthesisUtterance(item.text.replace(/—/g, ','));
+      u.rate = 1; u.pitch = 1; u.lang = 'en-US';
+      var voices = speechSynthesis.getVoices();
+      var preferred = voices.find(function(v){ return /^en/i.test(v.lang) && /google/i.test(v.name); }) || voices.find(function(v){ return /^en/i.test(v.lang); });
+      if (preferred) u.voice = preferred;
+      u.onend = function() {
+        if (!TTS.playing) return;
+        TTS.idx++;
+        speakNext();
+      };
+      u.onerror = function() { stopListen(); };
+      speechSynthesis.speak(u);
+    }
+
+    function setBar(listening) {
+      document.getElementById('listenIco').textContent = listening ? '⏸' : '🔊';
+      document.getElementById('listenLbl').textContent = listening ? 'Pause' : 'Listen';
+      document.getElementById('listenBtn').classList.toggle('active', listening);
+    }
+
+    function toggleListen() {
+      if (!('speechSynthesis' in window)) { alert('Read-aloud is not supported on this browser. Try Chrome. 🎧'); return; }
+      if (TTS.playing) {
+        speechSynthesis.cancel();
+        TTS.playing = false;
+        clearSpeakMarks();
+        setBar(false);
+        return;
+      }
+      if (speechSynthesis.paused && TTS.idx > 0) { speechSynthesis.resume(); TTS.playing = true; setBar(true); return; }
+      if (!TTS.items.length) buildList();
+      TTS.playing = true;
+      setBar(true);
+      speakNext();
+    }
+
+    function stopListen() {
+      speechSynthesis.cancel();
+      TTS.playing = false;
+      TTS.idx = 0;
+      clearSpeakMarks();
+      setBar(false);
+    }
+
+    speechSynthesis.getVoices();
+    if ('onvoiceschanged' in speechSynthesis) { speechSynthesis.onvoiceschanged = function(){ speechSynthesis.getVoices(); }; }
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden && TTS.playing) { speechSynthesis.pause(); }
+    });
+
+    function openModal(e) {
+      if (e) e.preventDefault();
+      document.getElementById('leadModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      document.getElementById('leadModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function showSuccess(name) {
+      document.getElementById('leadForm').style.display = 'none';
+      var s = document.getElementById('leadSuccess');
+      document.getElementById('successMsg').textContent = (name ? (name + ', y') : 'Y') + 'our free preview is unlocked. A copy is also on its way to your email.';
+      s.style.display = 'block';
+    }
+
+    function submitLead() {
+      var emailEl = document.getElementById('fEmail');
+      var email = emailEl.value.trim();
+      if (!email || email.indexOf('@') < 1) { emailEl.focus(); emailEl.style.borderColor = '#FF6B9D'; return; }
+      var name = document.getElementById('fName').value.trim();
+      var cc = document.getElementById('fCC').value.trim().replace(/^0+/, '');
+      var phone = document.getElementById('fPhone').value.trim();
+      var wa = phone && !phone.startsWith('+') ? cc + phone.replace(/^0/, '') : phone;
+      var btn = document.getElementById('leadSubmit');
+      btn.disabled = true;
+      btn.textContent = 'SENDING...';
+      var body = 'form-name=leads&name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '&whatsapp=' + encodeURIComponent(wa) + '&source=bottombar-hero&path=' + encodeURIComponent(location.pathname);
+      fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
+        .catch(function(){ /* saved locally when offline/pre-deploy */ })
+        .finally(function(){ finishLead(); });
+
+      function finishLead() {
+        try { localStorage.setItem('yeshurun_lead', JSON.stringify({ name: name, email: email, wa: wa, t: Date.now() })); } catch(e) {}
+        if (wa) {
+          var waJoin = document.getElementById('waJoin');
+          if (waJoin.getAttribute('href').indexOf('INSERT_') === 0) {
+            waJoin.href = 'https://wa.me/?text=' + encodeURIComponent('🙌 ' + (name || 'Friend') + ", here's the free preview of Yeshurun: " + location.origin + location.pathname.replace('index.html','preview.html'));
+          }
+        }
+        showSuccess(name);
+      }
+    }
+
+    function trackBuy() {
+      try { localStorage.setItem('yeshurun_buy_click', String(Date.now())); } catch(e) {}
+    }
+
+    function sharePage() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'Yeshurun: The Upright One',
+          text: 'Are you still in your Yaakov season? Read the free preview 👀',
+          url: window.location.origin + window.location.pathname
+        }).catch(function(){});
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(window.location.origin + window.location.pathname).then(function(){
+          alert('Link copied — paste it in WhatsApp 📲');
+        });
+      } else {
+        alert('Share: ' + window.location.href);
+      }
+    }
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('./sw.js').catch(function(){});
+      });
+    }
+  </script>
+</body>
+</html>

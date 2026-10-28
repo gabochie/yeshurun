@@ -1,0 +1,52 @@
+COVER DESIGN SPECIFICATIONS
+============================
+
+Title: YESHURUN: The Upright One
+Subtitle: A Study of Israel's Ideal Identity
+Author: Gideon Abochie
+Trim Size: 6" x 9" (152.4mm x 228.6mm)
+Spine Width: 0.25" (based on ~140-150 pages, depending on paper)
+
+FRONT COVER ELEMENTS
+--------------------
+- Title: "YESHURUN" (Bold Display Font, 72-90pt)
+- Subtitle: "The Upright One" / "A Study of Israel's Ideal Identity" (Light/Semibold, 24-36pt)
+- Author Name: Bottom, placed in elegant serif (18-24pt)
+
+COLOR PALETTE
+-------------
+- Deep Navy (#0F1C2E) - Background/Primary
+- Gold (#D4B942) - Accent/Title (represents divine light, menora)
+- Cream (#F7F3E9) - Text highlights/background elements
+- Charcoal (#1A1A1A) - Body text
+
+DESIGN CONCEPT
+--------------
+Symbolism:
+- Menorah or Seven-Branched Lampstand - represents divine light/wisdom
+- Olive branch/pomegranate motifs - biblical symbols
+- Hebrew letters יְשֻׁרוּן subtly incorporated as watermark/background
+- Geometric Star of David elements used tastefully
+- Ladder/Jacob's ladder motif subtly integrated
+- Mountains/desert landscape evoking biblical Israel
+
+FONT RECOMMENDATIONS
+--------------------
+- Display/Title: Cormorant Upright, Cinzel, Trajan Pro (elegant serifs)
+- Subtitle: Lora, Cormorant, Crimson Text
+- Body: Cormorant Garamond, Lora, Crimson Pro
+
+AI IMAGE PROMPT (for DALL-E/Midjourney/Bing)
+--------------------------------------------
+"A minimalist elegant book cover for 'Yeshurun: The Upright One - A Study of Israel's Ideal Identity'. 
+6x9 paperback. Deep navy background. Gold ornate Hebrew lettering יְשֻׁרוּן at top. 
+Stylized gold seven-branched menorah below it. Subtle olive branches and pomegranate motifs. 
+Elegant serif typography for English title in gold. Clean, premium, spiritual, scholarly 
+but accessible. No clutter, high contrast, bestseller aesthetic."
+
+BACK COVER ELEMENTS
+-------------------
+- Book Description (150-200 words)
+- Barcode space (ISBN)
+- Author bio snippet (25-40 words)
+- Publisher logo space

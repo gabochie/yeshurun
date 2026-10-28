@@ -1,0 +1,25 @@
+{
+  "name": "Yeshurun: The Upright One",
+  "short_name": "Yeshurun",
+  "description": "Are you still in your Yaakov season? Free preview of Yeshurun: The Upright One by Gideon Abochie",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#050510",
+  "theme_color": "#050510",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

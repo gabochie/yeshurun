@@ -1,0 +1,6 @@
+The new cover from https://chatgpt.com/s/m_6ae1ee3b677481919d7735328c45e699 couldn't be fetched (expired/403). 
+Current covers remain in Book/Cover/ and are referenced. 
+To update, download the new cover manually and replace:
+- Yeshurun_Cover.jpg (main)
+- Yeshurun_Cover_1600x2560.jpg (KDP ebook)
+- Yeshurun_Cover_1800x2700.jpg (KDP paperback)

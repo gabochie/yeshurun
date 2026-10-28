@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#050510">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Free Preview | Yeshurun: The Upright One</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050510;
+      --gold: #FFD93B;
+      --pink: #FF6B9D;
+      --purple: #A855F7;
+      --text: #FFFFFF;
+      --text-sub: rgba(255,255,255,0.85);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
+    html, body { overflow-x: hidden; overscroll-behavior: none; }
+    body {
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      background: radial-gradient(ellipse 120% 80% at 50% 0%, #1a0b2e 0%, #050510 60%, #000000 100%);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+      touch-action: pan-y;
+      -webkit-text-size-adjust: 100%;
+    }
+    .cover {
+      min-height: 88svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: calc(40px + env(safe-area-inset-top)) 16px calc(40px + env(safe-area-inset-bottom));
+      position: relative;
+    }
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(90vw, 700px);
+      height: min(90vw, 700px);
+      background: radial-gradient(circle, rgba(168,85,247,0.22) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cover-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: radial-gradient(ellipse, rgba(255,255,255,0.08) 0%, rgba(255,217,59,0.10) 40%, transparent 75%);
+      border: 1px solid rgba(255,217,59,0.55);
+      color: var(--gold);
+      padding: 9px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      margin-bottom: 26px;
+      position: relative;
+      z-index: 2;
+    }
+    .cover h1 {
+      font-family: 'Space Grotesk', 'Poppins', sans-serif;
+      font-size: clamp(34px, 9vw, 92px);
+      font-weight: 900;
+      line-height: 0.98;
+      margin-bottom: 14px;
+      letter-spacing: -0.03em;
+      position: relative;
+      z-index: 2;
+      background: linear-gradient(135deg, #F7F3E9 0%, #FFD93B 90%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .cover-subtitle {
+      font-size: clamp(18px, 4.5vw, 28px);
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+    }
+    .flow-line {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(15px, 4vw, 20px);
+      font-weight: 600;
+      margin-top: 14px;
+      position: relative;
+      z-index: 2;
+    }
+    .flow-line .a { color: var(--text-sub); }
+    .flow-line .arr { color: var(--pink); }
+    .flow-line .c { background: linear-gradient(135deg, #FFD93B 0%, #FF6B9D 60%, #A855F7 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .cover-author { font-size: 15px; color: var(--text-sub); margin-top: 30px; position: relative; z-index: 2; }
+    .section {
+      max-width: min(92vw, 680px);
+      margin: 0 auto;
+      padding: 48px 0;
+      content-visibility: auto;
+      contain-intrinsic-size: auto 420px;
+    }
+    .section-inner { padding: 0 18px; }
+    .section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(26px, 6.4vw, 46px);
+      font-weight: 800;
+      margin-bottom: 20px;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+    }
+    .section p {
+      font-size: clamp(16px, 3.8vw, 19px);
+      color: var(--text-sub);
+      margin-bottom: 20px;
+    }
+    .quote {
+      background: radial-gradient(circle at top, rgba(255,217,59,0.14) 0%, rgba(168,85,247,0.10) 100%);
+      border: 1px solid rgba(255,217,59,0.5);
+      border-radius: 22px;
+      padding: clamp(22px, 5.5vw, 34px);
+      margin: 30px 0;
+      box-shadow: 0 16px 44px rgba(0,0,0,0.45);
+    }
+    .quote p {
+      font-size: clamp(17px, 4.4vw, 24px);
+      font-weight: 700;
+      font-family: 'Space Grotesk', sans-serif;
+      line-height: 1.55;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .quote .ref { font-size: clamp(13px, 3vw, 17px); color: var(--text-sub); font-weight: 500; margin-bottom: 0; }
+    .names {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,217,59,0.35);
+      border-radius: 18px;
+      padding: clamp(18px, 4.5vw, 28px);
+      margin: 24px 0;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(15px, 3.8vw, 19px);
+      font-weight: 600;
+    }
+    .names .n { color: var(--gold); display: block; margin-bottom: 6px; }
+    .names .n:last-child { margin-bottom: 0; }
+    .names .d { color: var(--text-sub); font-weight: 500; }
+    .names .d b { color: var(--gold); }
+    .gold { color: var(--gold); }
+    .speaking {
+      border-left: 3px solid var(--gold) !important;
+      padding-left: 12px;
+      box-shadow: inset 0 0 0 3px rgba(255,217,59,0.06);
+      border-radius: 0 10px 10px 0;
+      animation: pulse 1.6s ease infinite;
+    }
+    h2.speaking { color: var(--gold) !important; }
+    @keyframes pulse { 50% { box-shadow: inset 0 0 0 3px rgba(255,217,59,0.14); } }
+    .buy-panel {
+      background: radial-gradient(circle at top, rgba(255,217,59,0.13) 0%, rgba(168,85,247,0.10) 100%);
+      border: 2px solid var(--gold);
+      border-radius: 22px;
+      padding: clamp(24px, 6vw, 36px);
+      margin: 40px auto 30px;
+      text-align: center;
+      max-width: min(92vw, 680px);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.5);
+    }
+    .buy-panel h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(30px, 7.5vw, 54px);
+      font-weight: 900;
+      line-height: 1.08;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+    .buy-panel p { font-size: clamp(16px, 3.9vw, 20px); color: var(--text-sub); margin-bottom: 24px; }
+    .buy-btns { display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px; }
+    .buy-btns a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 24px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: clamp(16px, 4vw, 18px);
+      text-decoration: none;
+      text-align: center;
+      -webkit-appearance: none;
+      transition: transform 0.2s;
+    }
+    .buy-btns a:active { transform: scale(0.98); }
+    .buy-btns a.btn-gold {
+      background: linear-gradient(135deg, #FFD93B 0%, #F59E0B 100%);
+      color: #000;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 0 28px rgba(255,217,59,0.3);
+    }
+    .buy-btns a.btn-outline {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,217,59,0.55);
+      color: #fff;
+    }
+    .buy-btns .alt-row { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .buy-btns .alt-link {
+      padding: 12px 22px;
+      font-size: 14px;
+      border-radius: 999px;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--text-sub);
+      box-shadow: none;
+    }
+    .finale { text-align: center; padding: 30px 20px calc(120px + env(safe-area-inset-bottom)); position: relative; }
+    .finale p {
+      font-size: clamp(17px, 4.4vw, 23px);
+      font-weight: 700;
+      font-family: 'Space Grotesk', sans-serif;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .finale p .grad {
+      background: linear-gradient(135deg, #FFD93B 0%, #FF6B9D 48%, #A855F7 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .footer {
+      text-align: center;
+      padding: 20px 18px calc(110px + env(safe-area-inset-bottom));
+      opacity: 0.4;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .bottombar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      display: flex;
+      justify-content: space-around;
+      align-items: stretch;
+      background: rgba(10, 10, 24, 0.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-top: 1px solid rgba(255,217,59,0.35);
+      padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+      max-width: 560px;
+      margin: 0 auto;
+      border-radius: 18px 18px 0 0;
+    }
+    .bb-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 6px 14px;
+      border-radius: 12px;
+      transition: color 0.2s, background 0.2s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .bb-item:active { background: rgba(255,217,59,0.14); }
+    .bb-item .bb-ico { font-size: 20px; line-height: 1; }
+    .bb-item.active { color: var(--gold); }
+    .bb-item.primary { color: #000; background: linear-gradient(135deg, #FFD93B 0%, #F59E0B 100%); font-weight: 800; box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 0 28px rgba(255,217,59,0.3); }
+    @media (min-width: 700px) { .bottombar { border-radius: 18px; margin-bottom: 14px; } }
+  </style>
+</head>
+<body>
+
+  <div class="cover">
+    <div class="cover-badge">👀 FREE PREVIEW</div>
+    <h1>YESHURUN</h1>
+    <div class="cover-subtitle">The Upright One</div>
+    <div class="flow-line">
+      <span class="a">Yaakov</span> <span class="arr">→</span> <span class="a">Israel</span> <span class="arr">→</span> <span class="c">Yeshurun</span>
+    </div>
+    <p class="cover-author"><strong>By Gideon Abochie</strong></p>
+  </div>
+
+  <div class="section"><div class="section-inner"><h2>Are You Still In Your Yaakov Season?</h2></div></div><div class="section"><div class="section-inner"><h2>The Question We All Ask</h2><p>Have you ever felt like you're fighting for everything?</p><p>Like you're grinding, striving, wrestling with life, people, purpose... yet still feel like you're not quite who you're meant to be?</p><p>If yes, then you already understand the story of Jacob.</p></div></div><div class="section"><div class="section-inner"><h2>Meet Yaakov: The One Who Grabs The Heel</h2><p>Before he became Israel, he was known as <em>Yaakov</em> (יַעֲקֹב).</p><p>The name literally means "heel-catcher" or "supplanter".</p><p>Jacob came into this world grabbing the heel of his twin brother Esau (Genesis 25:26).</p><p>From day one, his life was a fight.</p><p>He fought for blessing. He fought for love. He fought to survive.</p><p><strong class="gold">Sound familiar?</strong></p><p>Many of us live our lives as "Yaakov".</p><p>• Striving to be accepted</p><p>• Fighting for our place</p><p>• Working twice as hard to get half as much</p><p>• Constantly trying to earn what God already wants to give</p></div></div><div class="section"><div class="section-inner"><h2>The Night Everything Changed</h2><p>One night, Jacob found himself alone by the Jabbok River (Genesis 32:22-28).</p><p>And he wrestled.</p><p>Not with a man... but with God.</p><p>He wrestled until daybreak. Bruised. Limping. Exhausted.</p><p>But he refused to let go until he was blessed.</p><p>God spoke these words to him:</p><div class="quote"><p>"Your name shall no longer be called Yaakov, but Israel; for you have struggled with God and with men, and have prevailed."</p><p class="ref">— Genesis 32:28 NKJV</p></div></div></div><div class="section"><div class="section-inner"><h2>From Striver To Prince</h2><p><em>Israel</em> (יִשְׂרָאֵל) means, <strong class="gold">"He who strives with God and prevails."</strong></p><p>Notice this: God didn't erase Jacob. He renamed him.</p><p>He didn't condemn the wrestler. He crowned him.</p><p>The same person that was known for grabbing became known for clinging to God.</p><p><strong class="gold">The limp remained.</strong></p><p>Jacob walked with a limp for the rest of his life (Genesis 32:31-32).</p><p>God doesn't always take the struggle away, but He will use it to change your name.</p></div></div><div class="section"><div class="section-inner"><h2>God Has Another Name For You</h2><p>There's a third name that God uses for His people throughout Scripture: <strong class="gold">Yeshurun</strong> (יְשֻׁרוּן).</p><p>It means, <strong class="gold">"The Upright One".</strong></p><p>It's not a name earned by perfection. It's a name spoken in love.</p><p>It's the name God calls you when He sees who you're BECOMING, not just who you've been.</p><div class="names"><span class="n">Yaakov <span class="d">= <b>Who you were</b> in the fight</span></span><span class="n">Israel <span class="d">= <b>Who you are becoming</b> as you wrestle with God</span></span><span class="n">Yeshurun <span class="d">= <b>Who God says you already are</b> in His love</span></span></div></div></div><div class="section"><div class="section-inner"><h2>Your Journey Is Theirs</h2><p>If you're crawling, He's still calling you His.</p><p>If you're fighting, He's still wrestling with you to bless you.</p><p>If you're limping, He's still leading you.</p><p>The journey isn't from failure to perfection. It's from <em>striver</em> to <em>beloved</em>.</p><p>God is taking the same people He once called "Jacob" and calling them, "My upright one. My beloved."</p></div></div>
+
+  <div class="buy-panel" id="getbook">
+    <h2>READY TO GO DEEPER?</h2>
+    <p>The full book <strong class="gold">Yeshurun: The Upright One</strong> takes this journey further — the Hebrew, the symbolism, and the prophetic call on <em>your</em> identity.</p>
+    <div class="buy-btns">
+      <a href="INSERT_SELAR_LINK" class="btn-gold"><span>🛒 GET THE FULL BOOK — $4.99</span></a>
+      <a href="INSERT_KDP_LINK" class="btn-outline"><span>Buy on Amazon</span></a>
+      <div class="alt-row">
+        <a href="INSERT_WEBSITE_LINK" class="alt-link">Studio Gabochie</a>
+        <a href="javascript:void(0)" class="alt-link" onclick="sharePage()">Share this preview 📲</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="finale">
+    <p>God doesn't just save you <em>from</em> who you were. He calls you into <span class="grad">who He's destined you to be.</span></p>
+  </div>
+
+  <div class="footer">
+    <p>© 2026 Gideon Abochie • Yeshurun: The Upright One</p>
+  </div>
+
+  <nav class="bottombar">
+    <a href="./index.html" class="bb-item">
+      <span class="bb-ico">📖</span>
+      <span>Home</span>
+    </a>
+    <a href="#getbook" class="bb-item primary">
+      <span class="bb-ico">🛒</span>
+      <span>Get Book</span>
+    </a>
+    <a href="./preview.html" class="bb-item active">
+      <span class="bb-ico">👀</span>
+      <span>Preview</span>
+    </a>
+    <a href="javascript:void(0)" class="bb-item" id="listenBtn" onclick="toggleListen()">
+      <span class="bb-ico" id="listenIco">🔊</span>
+      <span id="listenLbl">Listen</span>
+    </a>
+    <a href="javascript:void(0)" class="bb-item" onclick="sharePage()">
+      <span class="bb-ico">🚀</span>
+      <span>Share</span>
+    </a>
+  </nav>
+
+  <script>
+    var TTS = { playing: false, items: [], idx: 0 };
+
+    function buildList() {
+      TTS.items = [];
+      var cover = document.querySelector('.cover');
+      if (cover) TTS.items.push({ el: cover, text: 'Yeshurun. The Upright One. Free preview, by Gideon Abochie.' });
+      document.querySelectorAll('.section .section-inner').forEach(function(sec) {
+        [].forEach.call(sec.children, function(ch) {
+          if (ch.tagName === 'H2') {
+            TTS.items.push({ el: ch, text: ch.textContent });
+          } else if (ch.classList && ch.classList.contains('quote')) {
+            TTS.items.push({ el: ch, text: ch.querySelector('p').textContent });
+            var ref = ch.querySelector('.ref');
+            if (ref) TTS.items.push({ el: ref, text: ref.textContent, light: true });
+          } else if (ch.classList && ch.classList.contains('names')) {
+            TTS.items.push({ el: ch, text: ch.innerText.trim() });
+          } else if (ch.tagName === 'P' && ch.textContent.trim()) {
+            TTS.items.push({ el: ch, text: ch.textContent.trim(), light: true });
+          }
+        });
+      });
+    }
+
+    function clearSpeakMarks() {
+      document.querySelectorAll('.speaking').forEach(function(el) { el.classList.remove('speaking'); });
+    }
+
+    function highlight(el, isHeading) {
+      clearSpeakMarks();
+      el.classList.add('speaking');
+      try { el.scrollIntoView({ block: 'center', behavior: 'smooth' }); } catch(e) { el.scrollIntoView(true); }
+    }
+
+    function speakNext() {
+      if (!TTS.playing) return;
+      if (TTS.idx >= TTS.items.length) { stopListen(); return; }
+      var item = TTS.items[TTS.idx];
+      highlight(item.el, item.text.length < 60);
+      var u = new SpeechSynthesisUtterance(item.text);
+      u.rate = 1; u.pitch = 1; u.lang = 'en-US';
+      var voices = speechSynthesis.getVoices();
+      var preferred = voices.find(function(v){ return /en(-|_)(US|GB|NG|GH)/i.test(v.lang) && /female|senum|aditi|google/i.test(v.name + ' ' + v.lang); }) || voices.find(function(v){ return /^en/i.test(v.lang); });
+      if (preferred) u.voice = preferred;
+      u.onend = function() {
+        if (!TTS.playing) return;
+        TTS.idx++;
+        speakNext();
+      };
+      u.onerror = function() { stopListen(); };
+      speechSynthesis.speak(u);
+    }
+
+    function setBar(listening) {
+      document.getElementById('listenIco').textContent = listening ? '⏸' : '🔊';
+      document.getElementById('listenLbl').textContent = listening ? 'Pause' : 'Listen';
+      document.getElementById('listenBtn').classList.toggle('active', listening);
+    }
+
+    function toggleListen() {
+      if (!('speechSynthesis' in window)) { alert('Read-aloud is not supported on this browser. Try Chrome. 🎧'); return; }
+      if (TTS.playing) {
+        speechSynthesis.cancel();
+        TTS.playing = false;
+        clearSpeakMarks();
+        setBar(false);
+        return;
+      }
+      if (speechSynthesis.paused && TTS.idx > 0) { speechSynthesis.resume(); TTS.playing = true; setBar(true); return; }
+      if (!TTS.items.length) buildList();
+      TTS.playing = true;
+      setBar(true);
+      speakNext();
+    }
+
+    function stopListen() {
+      speechSynthesis.cancel();
+      TTS.playing = false;
+      TTS.idx = 0;
+      clearSpeakMarks();
+      setBar(false);
+    }
+
+    speechSynthesis.getVoices();
+    if ('onvoiceschanged' in speechSynthesis) { speechSynthesis.onvoiceschanged = function(){ speechSynthesis.getVoices(); }; }
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden && TTS.playing) { speechSynthesis.pause(); }
+    });
+
+    function sharePage() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'Yeshurun — Free Preview',
+          text: 'Are you still in your Yaakov season? Read the free preview 👀',
+          url: window.location.origin + window.location.pathname
+        }).catch(function(){});
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(window.location.origin + window.location.pathname).then(function(){
+          alert('Link copied — paste it in WhatsApp 📲');
+        });
+      } else {
+        alert('Share: ' + window.location.href);
+      }
+    }
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('./sw.js').catch(function(){});
+      });
+    }
+  </script>
+</body>
+</html>
