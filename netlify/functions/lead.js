@@ -69,7 +69,7 @@ exports.handler = async (event) => {
 
   const key = process.env.BREVO_API_KEY;
   if (!key) {
-    return { statusCode: 200, headers: CORS, body: JSON.stringify({ ...result, reason: 'email_provider_not_configured' }) };
+    return { statusCode: 200, headers: CORS, body: JSON.stringify({ ...result, storeReady: Store.ready, reason: 'email_provider_not_configured' }) };
   }
 
   const attributes = { FIRSTNAME: name, SOURCE: source };
