@@ -1,4 +1,4 @@
-const CACHE_NAME = 'yeshurun-preview-v5';
+const CACHE_NAME = 'yeshurun-preview-v6';
 const ASSETS = [
   './index.html',
   './preview.html',

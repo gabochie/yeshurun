@@ -7,10 +7,25 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Are You Still In Your Yaakov Season? | Free Preview</title>
+  <meta name="description" content="God isn't finished with your story. Read the free 5-minute preview of Yeshurun: The Upright One by Gideon Abochie — from Yaakov to Israel to who God says you already are.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Yeshurun: The Upright One">
+  <meta property="og:title" content="Are You Still In Your Yaakov Season?">
+  <meta property="og:description" content="Read the free preview of Yeshurun: The Upright One by Gideon Abochie — the fight you're in is leading you to who God has called you to be.">
+  <meta property="og:image" content="https://yes.gabochie.com/cover.jpg">
+  <meta property="og:url" content="https://yes.gabochie.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Are You Still In Your Yaakov Season?">
+  <meta name="twitter:description" content="Read the free preview of Yeshurun: The Upright One by Gideon Abochie.">
+  <meta name="twitter:image" content="https://yes.gabochie.com/cover.jpg">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
   <link rel="manifest" href="manifest.json">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Space+Grotesk:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Space+Grotesk:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Space+Grotesk:wght@400;600;700&display=swap"></noscript>
   <style>
     :root {
       --bg: #050510;
@@ -42,6 +57,7 @@
     h2.speaking, h1.speaking { color: var(--gold) !important; }
     @keyframes pulse { 50% { box-shadow: inset 0 0 0 3px rgba(255,217,59,0.14); } }
     .hero {
+      min-height: 100vh;
       min-height: 100svh;
       display: flex;
       flex-direction: column;
@@ -68,7 +84,6 @@
       gap: 8px;
       background: radial-gradient(ellipse, rgba(255,255,255,0.08) 0%, rgba(255,217,59,0.10) 40%, transparent 75%);
       border: 1px solid rgba(255,217,59,0.55);
-      background: radial-gradient(ellipse, rgba(255,255,255,0.08) 0%, rgba(255,217,59,0.10) 40%, transparent 75%);
       padding: 9px 18px;
       border-radius: 999px;
       font-weight: 700;
@@ -82,7 +97,7 @@
     .hero h1 {
       font-family: 'Space Grotesk', 'Poppins', sans-serif;
       font-size: clamp(34px, 9vw, 92px);
-      font-weight: 900;
+      font-weight: 700;
       line-height: 0.98;
       margin-bottom: 18px;
       letter-spacing: -0.03em;
@@ -114,6 +129,7 @@
     }
     .cover-frame {
       position: relative;
+      aspect-ratio: 437 / 630;
       border-radius: 14px;
       overflow: hidden;
       box-shadow: 0 18px 50px rgba(0,0,0,0.75), 0 0 70px rgba(168,85,247,0.3);
@@ -129,10 +145,12 @@
       pointer-events: none;
     }
     .cover-img {
-      display: block;
+      position: absolute;
+      inset: 0;
       width: 100%;
-      height: auto;
+      height: 100%;
       object-fit: cover;
+      object-position: 52.2% 50%;
       background: #0a0a18;
     }
     .cta-primary {
@@ -182,7 +200,7 @@
     .section h2 {
       font-family: 'Space Grotesk', sans-serif;
       font-size: clamp(30px, 7vw, 54px);
-      font-weight: 800;
+      font-weight: 700;
       margin-bottom: 26px;
       line-height: 1.08;
       letter-spacing: -0.02em;
@@ -227,7 +245,7 @@
     .cta-final h2 {
       font-family: 'Space Grotesk', sans-serif;
       font-size: clamp(34px, 8vw, 68px);
-      font-weight: 900;
+      font-weight: 700;
       margin-bottom: 16px;
       letter-spacing: -0.02em;
     }
@@ -295,7 +313,9 @@
     }
     .modal-backdrop.open { display: flex; }
     .modal {
+      position: relative;
       width: min(96vw, 480px);
+      max-height: 92vh;
       max-height: 92svh;
       overflow-y: auto;
       background: linear-gradient(180deg, #141428 0%, #0a0a18 100%);
@@ -309,7 +329,7 @@
     .modal h3 {
       font-family: 'Space Grotesk', sans-serif;
       font-size: clamp(22px, 6vw, 30px);
-      font-weight: 800;
+      font-weight: 700;
       line-height: 1.15;
       margin-bottom: 10px;
     }
@@ -318,6 +338,24 @@
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
+    }
+    .modal .close-x {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.7);
+      font-size: 16px;
+      line-height: 1;
+      z-index: 3;
+      -webkit-tap-highlight-color: transparent;
     }
     .modal p.lead-note { font-size: 14px; color: var(--text-sub); margin-bottom: 20px; }
     .modal input {
@@ -414,7 +452,7 @@
     </p>
     <div class="cover-wrap">
       <div class="cover-frame">
-        <img class="cover-img" src="./cover.jpg" alt="Yeshurun: The Upright One by Gideon Abochie book cover" width="1200" height="630" loading="eager" fetchpriority="high" decoding="async">
+        <img class="cover-img" src="./cover.jpg" alt="Yeshurun: The Upright One by Gideon Abochie book cover" loading="eager" fetchpriority="high" decoding="async">
       </div>
     </div>
     <a href="#preview" class="cta-primary" onclick="openModal(event)">
@@ -491,17 +529,20 @@
   </form>
 
   <div class="modal-backdrop" id="leadModal" onclick="if(event.target===this)closeModal()">
-    <div class="modal">
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Get the free preview">
+      <button type="button" class="close-x" aria-label="Close" onclick="closeModal()">✕</button>
       <div id="leadForm">
         <h3>Unlock the <span class="gradient">FREE PREVIEW</span></h3>
         <p class="lead-note">Where should we send your free preview? Grab it now — plus be first to know when the full book drops.</p>
-        <input type="text" id="fName" name="name" placeholder="Your first name" autocomplete="given-name">
-        <input type="email" id="fEmail" name="email" placeholder="Your email *" inputmode="email" autocomplete="email">
+        <form id="leadFormEl" onsubmit="submitLead(); return false">
+        <input type="text" id="fName" name="name" placeholder="Your first name" autocomplete="given-name" aria-label="Your first name">
+        <input type="email" id="fEmail" name="email" placeholder="Your email *" inputmode="email" autocomplete="email" enterkeyhint="next" aria-label="Your email">
         <div class="whatsapp-field">
           <input type="tel" id="fCC" value="+233" aria-label="Country code" autocomplete="tel-country-code">
-          <input type="tel" id="fPhone" name="whatsapp" placeholder="WhatsApp number (optional)" inputmode="tel" autocomplete="tel-national">
+          <input type="tel" id="fPhone" name="whatsapp" placeholder="WhatsApp number (optional)" inputmode="tel" autocomplete="tel-national" aria-label="WhatsApp number, optional">
         </div>
-        <button class="submit-btn" onclick="submitLead()" id="leadSubmit">SEND ME THE PREVIEW →</button>
+        <button type="submit" class="submit-btn" id="leadSubmit">SEND ME THE PREVIEW →</button>
+        </form>
         <a href="javascript:void(0)" class="skip" onclick="closeModal()">No thanks, just show me the preview</a>
         <p class="priv-note">🔒 We keep it 100% — your info is never shared or sold.</p>
       </div>
