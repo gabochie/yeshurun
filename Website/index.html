@@ -449,7 +449,7 @@
     </p>
     <div class="cover-wrap">
       <div class="cover-frame">
-        <img class="cover-img" src="./cover.jpg" alt="Yeshurun: The Upright One by Gideon Abochie book cover" loading="eager" fetchpriority="high" decoding="async">
+        <img class="cover-img" id="heroCover" src="./cover.jpg" alt="Yeshurun book cover" loading="eager" fetchpriority="high" decoding="async">
       </div>
     </div>
     <a href="#preview" class="cta-primary" onclick="openModal(event)">
@@ -595,6 +595,77 @@
 
     function isPlaceholder(u) { return !u || u.indexOf('INSERT_') === 0; }
 
+    var GA_ID = 'INSERT_GA_ID';
+
+    (function initGA() {
+      if (isPlaceholder(GA_ID)) return;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function(){ window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', GA_ID, { send_page_view: true });
+    })();
+
+    var AB = (function() {
+      var VARIANTS = [
+        { id: 'cover1',   src: './covers/cover-1.jpg',  pos: 'classic-study' },
+        { id: 'cover2',   src: './covers/cover-2.jpg',  pos: 'genz-way' },
+        { id: 'cover2a',  src: './covers/cover-2a.jpg', pos: 'teen-faith' },
+        { id: 'cover3',   src: './covers/cover-3.jpg',  pos: 'kids-parents' }
+      ];
+      function normalize(v) {
+        var k = String(v || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+        var found = VARIANTS.filter(function(x){ return x.id.replace(/[^a-z0-9]/g, '') === k; });
+        return found[0] || null;
+      }
+      function pick() {
+        try {
+          var q = new URLSearchParams(location.search);
+          var force = normalize(q.get('v') || q.get('utm_content'));
+          if (force) return force.id;
+          var saved = normalize(localStorage.getItem('yeshurun_variant'));
+          if (saved) return saved.id;
+          return VARIANTS[Math.floor(Math.random() * VARIANTS.length)].id;
+        } catch (err) { return VARIANTS[Math.floor(Math.random() * VARIANTS.length)].id; }
+      }
+      var chosen = pick();
+      try { localStorage.setItem('yeshurun_variant', chosen); } catch (err) {}
+      var meta = VARIANTS.filter(function(v){ return v.id === chosen; })[0] || {};
+      return { variant: chosen, pos: meta.pos || chosen, src: meta.src || './cover.jpg' };
+    })();
+
+    function abFire(event) {
+      try {
+        if (!isPlaceholder(GA_ID) && window.gtag) {
+          window.gtag('event', event, { variant: AB.variant, position: AB.pos });
+        } else {
+          console.log('[AB]', event, AB.variant);
+        }
+      } catch (err) {}
+    }
+
+    (function applyAB() {
+      var img = document.getElementById('heroCover');
+      var fired = false;
+      function fireOne() {
+        if (fired) return;
+        fired = true;
+        abFire('variant_view');
+      }
+      if (!img) { fireOne(); return; }
+      img.addEventListener('load', fireOne);
+      img.addEventListener('error', function() {
+        if (img.src.indexOf('cover.jpg') === -1) { img.src = './cover.jpg'; }
+        fireOne();
+      });
+      img.src = AB.src;
+      fireOne();
+    })();
+
+
     (function applyLinks() {
       if (!isPlaceholder(LINKS.selar)) document.querySelectorAll('a[href="INSERT_SELAR_LINK"]').forEach(function(a){ a.href = LINKS.selar; });
       if (!isPlaceholder(LINKS.kdp)) document.querySelectorAll('a[href="INSERT_KDP_LINK"]').forEach(function(a){ a.href = LINKS.kdp; });
@@ -689,6 +760,7 @@
       if (e) e.preventDefault();
       document.getElementById('leadModal').classList.add('open');
       document.body.style.overflow = 'hidden';
+      if (!window.__previewLogged) { window.__previewLogged = true; abFire('preview_open'); }
     }
     function closeModal() {
       document.getElementById('leadModal').classList.remove('open');
@@ -716,11 +788,11 @@
       var btn = document.getElementById('leadSubmit');
       btn.disabled = true;
       btn.textContent = 'SENDING...';
-      var body = 'form-name=leads&name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '&whatsapp=' + encodeURIComponent(wa) + '&source=bottombar-hero&path=' + encodeURIComponent(location.pathname);
+      var body = 'form-name=leads&name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '&whatsapp=' + encodeURIComponent(wa) + '&source=bottombar-hero&variant=' + encodeURIComponent(AB.variant) + '&path=' + encodeURIComponent(location.pathname);
       var fn = fetch('/.netlify/functions/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: name, email: email, whatsapp: wa, source: 'landing-modal', path: location.pathname })
+        body: JSON.stringify({ name: name, email: email, whatsapp: wa, source: 'landing-modal', variant: AB.variant, path: location.pathname })
       }).then(function(r) { return r.ok ? r.json() : null; }).catch(function(){ return null; });
       var nf = fetch('/', {
         method: 'POST',
@@ -738,11 +810,13 @@
           }
         }
         showSuccess(name, res);
+        abFire('lead_submit');
       }
     }
 
     function trackBuy() {
       try { localStorage.setItem('yeshurun_buy_click', String(Date.now())); } catch(e) {}
+      abFire('buy_click');
     }
 
     function sharePage() {

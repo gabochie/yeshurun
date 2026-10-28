@@ -3,7 +3,8 @@ const Store = (() => {
     const mod = require('@netlify/blobs');
     return { get: mod.getStore, ready: true };
   } catch (e) {
-    return { get: null, ready: false };
+    console.error('Blobs module load failed:', e && e.message ? e.message : String(e));
+    return { get: null, ready: false, err: e && e.message ? e.message : String(e) };
   }
 })();
 

@@ -46,3 +46,6 @@ Assets complete (manuscript, cover, exports, landing page, preview). Execution p
 - Prefer direct sales for better margins; also publish on KDP for discovery
 - Update todo lists as items are completed
 - Cover image current file is 1200x630 (landscape OG ratio); KDP needs 1600x2560 (eBook) and 1800x2700 (paperback) portrait
+- ~2026-10-28: Covers A/B test live in Website: 4 variants (covers/cover-1..3.jpg), GA4 events variant_view/preview_open/lead_submit/buy_click, `?v=coverX` + utm_content override. Source PNGs in Book/Cover/AB_Variants/
+- ~2026-10-28: Positioning insight - covers split into 3 audiences (adult study / Gen Z "The Yeshurun Way" / kids-with-parents-buyer, Cover 3 style). Parent confirmed as buyer for kids angle
+- Title conflict: Cover 2/2a say "The Yeshurun Way" vs ebook listing "Yeshurun: The Upright One" - if used on KDP/Selar must retitle product or re-render cover with official title

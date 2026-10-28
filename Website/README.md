@@ -15,13 +15,34 @@ Self-contained, mobile-first direct-response landing page. Zero external asset d
 ## Files
 - `index.html` - Landing/sales page
 - `preview.html` - Full free preview (reader)
-- `cover.jpg` - Book cover
+- `cover.jpg` - Book cover (default/OG)
+- `covers/cover-1.jpg` … `cover-3.jpg` - A/B test cover variants (compressed for web)
 - `icon.svg` - App icon
 - `manifest.json` - PWA manifest
 - `sw.js` - Service worker (offline cache)
 
+## Cover A/B Test (built in)
+`index.html` randomly serves one of 4 hero covers per visitor and logs
+`variant_view`, `preview_open`, `lead_submit`, `buy_click` events with the
+variant. Variant persists in `localStorage`; a visitor can be forced with
+`?v=cover1|cover2|cover2a|cover3` (also accepts `utm_content` for social posts
+so each ad/post link can pin its cover).
+
+1. Set your GA4 Measurement ID in place of `INSERT_GA_ID` in `index.html`
+2. Deploy, share links, watch GA4 `DebugView`/`Reports > Events`
+3. Metric to crown a winner: `preview_open` rate per `variant`
+   (secondary: `lead_submit`, `buy_click`)
+
+Variants (`Book/Cover/AB_Variants/` holds the full-res PNGs):
+| Variant | File | Position tested |
+|---|---|---|
+| cover1 | covers/cover-1.jpg | classic-study (adults) |
+| cover2 | covers/cover-2.jpg | genz-way ("The Yeshurun Way") |
+| cover2a | covers/cover-2a.jpg | teen-faith |
+| cover3 | covers/cover-3.jpg | kids-parents (kids art, parent buyer) |
+
 ## Before Going Live
-Replace `INSERT_SELAR_LINK` in `index.html` with your Selar product URL.
+Replace `INSERT_SELAR_LINK` and `INSERT_GA_ID` in `index.html` with your Selar product URL and GA4 measurement ID.
 
 ## Test Locally
 Run a tiny local server (service workers need http, not file://):
