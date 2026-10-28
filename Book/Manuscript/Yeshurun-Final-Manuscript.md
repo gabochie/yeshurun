@@ -15,7 +15,7 @@ ISBN: [To Be Assigned]
 ---
 
 ## Dedication
-*[Optional: Add your dedication here.]*
+For everyone still in the fight — still crawling, still wrestling, still refusing to let go. This one is for you. You are not who your name says you are in the dirt; you are who God says you are.
 
 ## Table of Contents
 
@@ -35,7 +35,13 @@ ISBN: [To Be Assigned]
 
 ## Foreword
 
-*[Foreword to be written. Consider including perspective on the topic and its relevance.]*
+The day a person discovers that God does not need them to be perfect — only upright, and only His — is the day their struggle changes meaning.
+
+This small book grew out of one Hebrew word that appears only four times in Scripture: Yeshurun. Four appearances; a whole hidden journey. Like every deep verse, it was hiding in plain sight — describing who we are in the gravel, who we become in the wrestle, and who God declares we already are in heaven.
+
+However you got here, you are reading this before the wound became wisdom, or after. Either way: walk through. The next few hours may change what you call yourself.
+
+— Gideon Abochie
 
 ---
 
@@ -59,7 +65,7 @@ When ancient scholars translated the Hebrew Bible into the Greek Septuagint arou
 
 ### 1.3 The Warning of Prosperity
 
-The name is used with biting irony in the Song of Moses (DeuterTag 32:15): *"But Jeshurun grew fat and kicked... then he forsook God who made him."* This serves as a timeless warning that comfort and blessing can easily lead to pride and rebellion, like a well-fed ox refusing its master's yoke.
+The name is used with biting irony in the Song of Moses (Deuteronomy 32:15): *"But Jeshurun grew fat and kicked... then he forsook God who made him."* This serves as a timeless warning that comfort and blessing can easily lead to pride and rebellion, like a well-fed ox refusing its master's yoke.
 
 ### 1.4 The God of Yeshurun
 
@@ -97,7 +103,7 @@ Yeshurun is the transcendent archetype—the ultimate target. It projects Israel
 |-----------|------------------|--------------------|----------------------|
 | Linguistic Root | *Akev* (Heel/Footprint) | *Sar/El* (Strive/Champion with God) | *Yashar* (Straight/Upright) |
 | Core Character | The Supplanter/Survivor | The Prince/The Contender | The Righteous/The Beloved |
-| Scope | Individual/Patriarchal Family | National/Historical Identity | Cosmic/Transcrenderal Ideal |
+| Scope | Individual/Patriarchal Family | National/Historical Identity | Cosmic/Transcendental Ideal |
 | Primary Arena | The Private Tent & Exile | The Public Field & Geopolitics | The Divine Sanctuary & Intimacy |
 | The Warning | Vulnerability to exploitation | Defeat by external empires | Complacency through luxury |
 
@@ -105,7 +111,7 @@ Yeshurun is the transcendent archetype—the ultimate target. It projects Israel
 
 ## Chapter 3: The Symbolism of Yaakov
 
-### 3.1 The Heel (Akev) - Human Stritude and Mortality
+### 3.1 The Heel (Akev) - Human Strife and Mortality
 
 The name Yaakov stems from the root *akev* (עָקֵב), meaning "heel". The heel touches the dirt of the earth. Grabbing Esau's heel at birth symbolizes the perpetual struggle for spiritual dominance over base, material impulses. Unlike his predecessors, Yaakov symbolizes the exhausting process of transforming physical hardships into spiritual victories.
 
@@ -121,27 +127,27 @@ Yaakov's midnight wrestling match at the Jabbok river (Genesis 32:22-32) represe
 
 *"He was a wholesome man, dwelling in tents" (Genesis 25:27). While Esau symbolized hunting and external conquest, the tent of Yaakov symbolizes introspective study, quiet wisdom, and the preservation of spiritual tradition—the home as an academy of the soul.
 
-### 3.4 The Twelve Stones - Unity from Fragmentation
+### 3.5 The Twelve Stones - Unity from Fragmentation
 
 The multiple stones Yaakov gathered for his pillow miraculously fused into a single stone (Genesis 28:11-18; cf. Midrash). This symbolizes the future gathering of his twelve sons (the twelve tribes) into one unified nation, bringing unity out of chaos.
 
 ---
 
-## Chaphter 4: Hebrew Wordplay: The Linguistic Keys
+## Chapter 4: Hebrew Wordplay: The Linguistic Keys
 
 The Hebrew language is inherently root-based, allowing brilliant wordplay by prophets and mystics.
 
 ### 4.1 From Worm to Warrior: Isaiah 41:14
 
-*"Fear not, you worm Jacob, you men of Israel..." (Isaiah 41:14). The Hebrew *Tola'at Yaakov* links Jacob to a worm (*tole'a'). Isaac's assertion in the next verse, *"Behold, I will make you into a new, sharp threshing instrument having teeth,"* turns the worm's mouth into a weapon—God transforms the lowliest into a powerful vessel.
+*"Fear not, you worm Jacob, you men of Israel..." (Isaiah 41:14). The Hebrew *Tola'at Yaakov* links Jacob to a worm (*tole'ah*). Isaiah's oracle in the next verse, *"Behold, I will make you into a new, sharp threshing instrument having teeth,"* turns the worm's mouth into a weapon—God transforms the lowliest into a powerful vessel.
 
 ### 4.2 Israel as Li Rosh (The Head Belongs to Me)
 
-The letters of *Yisrael* (יִשְ�רָאֵל) rearranged form *Li Rosh* (לִי רֹאשׁ), meaning "The head belongs to me". To become Israel means the intellect (*rosh*) governs over the emotions and impulses—moving from reactive survivor to proactive spiritual master.
+The letters of *Yisrael* (יִשְׂרָאֵל) rearranged form *Li Rosh* (לִי רֹאשׁ), meaning "The head belongs to me". To become Israel means the intellect (*rosh*) governs over the emotions and impulses—moving from reactive survivor to proactive spiritual master.
 
 ### 4.3 Israel as Yashar-El (Straight with God)
 
-*Yisrael* splits into *Yashar* (יָשָבר, "straight/upright") and *El* (אֵל, "God"), meaning "Straight with God" or "The Upright of God". This linguistic bridge creates *Yeshurun* (יְשֻׁרוּן), pulling the root *Yashar* out of Israel's history and distilling it into its ideal form.
+*Yisrael* splits into *Yashar* (יָשָׁר, "straight/upright") and *El* (אֵל, "God"), meaning "Straight with God" or "The Upright of God". This linguistic bridge creates *Yeshurun* (יְשֻׁרוּן), pulling the root *Yashar* out of Israel's history and distilling it into its ideal form.
 
 ### 4.4 The Triad of Yeshurun: Shur, Shir, Yashar
 
@@ -167,7 +173,7 @@ Isaiah bridges Jacob and Israel, calling the nation from paralysis to action. Th
 
 ### 5.3 The Visionary Climax: "And you, Jeshurun, whom I have chosen" (Isaiah 44:2)
 
-Immediately after activating them as Israel, Isaiah invokes *Jeshurun*. To a traumatized exile, he says: *Right now you feel like a worm (Jacob), and you are wrestling to find your footing (Israel), but in My eyes, your ultimate destiny is to be completely upright, pure, and intensely loved (Jeshurun).* This provided the es **ctic hope required to survive the exile.
+Immediately after activating them as Israel, Isaiah invokes *Jeshurun*. To a traumatized exile, he says: *Right now you feel like a worm (Jacob), and you are wrestling to find your footing (Israel), but in My eyes, your ultimate destiny is to be completely upright, pure, and intensely loved (Jeshurun).* This provided the eschatological hope required to survive the exile.
 
 ---
 
@@ -187,9 +193,9 @@ When intellect and the higher soul take dominance, we ascend to *Israel*. Corres
 
 The transition to Yeshurun represents *bittul*—the complete nullification of the ego into a state of pure spiritual flow. Corresponding to *Atzilut* (Emanation), there is no internal friction or warfare. Your thoughts, words, and actions are in perfect alignment with truth. The right thing flows through you naturally—it is the psychology of profound inner peace and unbroken connection to the Divine.
 
-### 6.6 Synthesis: The Lifelong Dynamic
+### 6.4 Synthesis: The Lifelong Dynamic
 
-The journey is cyclical and lifelong. In moments of prayer, you glimpse Yeshurun. In meetings or conflicts, you stand as Israel. In exhaustion and survival, you are Yaakov. The map comforted that whether you are crawling, fighting, or radiating, you are entirely encompassed by the same soul's journey toward its ultimate destiny as Yeshurun: the upright, beloved one who walks straight with God.
+The journey is cyclical and lifelong. In moments of prayer, you glimpse Yeshurun. In meetings or conflicts, you stand as Israel. In exhaustion and survival, you are Yaakov. The map assures us that whether you are crawling, fighting, or radiating, you are entirely encompassed by the same soul's journey toward its ultimate destiny as Yeshurun: the upright, beloved one who walks straight with God.
 
 ---
 
@@ -203,7 +209,9 @@ This journey is ours as well. Every struggle is an opportunity to move from Yaak
 
 ## About the Author
 
-*[Insert author bio here: credentials, background, mission, website, social media. Optimal length 50-100 words.]*
+Gideon Abochie is a writer, teacher, and builder of things that outlast their makers — software, study guides, and people of conviction. Writing from Tema, Ghana, he documents the Hebrew roots of Scripture with one obsession: that you would stop calling yourself by what your season names you, and start answering to what your Father calls you.
+
+He is the author of Yeshurun: The Upright One and leads a growing WhatsApp community of readers wrestling through their own Yaakov season. Reach him at gabochie@gmail.com or at studio.gabochie.com.
 
 ---
 
@@ -216,4 +224,4 @@ This journey is ours as well. Every struggle is an opportunity to move from Yaak
 - McClintock and Strong's Cyclopedia
 - Contemporary Jewish Symbolism Studies
 
-*For more resources, visit [Author Website].*
+*For more resources and reader community: studio.gabochie.com · wa.me/233243262019 · @gideonabochie on Instagram, TikTok & YouTube.*

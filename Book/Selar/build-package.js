@@ -116,6 +116,21 @@ async function buildPDF() {
     doc.registerFont('fonts/hebrewB', '/system/fonts/NotoSerifHebrew-Bold.ttf');
 
     const INK = '#241d13', GOLD = '#8a6d1f', CREAM = '#fbf6ec', SUB = '#4a4133';
+    let pageNo = 0;
+    let pageNoSuppress = true;
+    let inFolio = false;
+    doc.on('pageAdded', function () {
+      pageNo++;
+      if (inFolio) return;
+      inFolio = true;
+      try {
+        if (!pageNoSuppress && pageNo > 3) {
+          const doc_y = 648 - 34;
+          doc.font('fonts/latin').fontSize(8.5).fillColor(SUB);
+          doc.text(String(pageNo), 54, doc_y, { width: 324, align: 'center', lineBreak: false });
+        }
+      } finally { inFolio = false; }
+    });
 
     /* cover page: full bleed image + border bars */
     doc.rect(0, 0, 432, 648).fill('#0d1b45');
@@ -128,7 +143,12 @@ async function buildPDF() {
       let first = true;
       for (const r of runs) {
         doc.font(fontFor(r.f));
-        doc.text(r.f === 'e' ? hebVis(r.x) : r.x, Object.assign({ continued: !first, align: (opts && opts.align) || 'justify', lineGap: 3, paragraphGap: 0 }, opts, (() => { const o = {}; if (first) return {}; return {}; })(), first ? {} : {}));
+        doc.text(r.f === 'e' ? hebVis(r.x) : r.x, Object.assign({
+          continued: !first,
+          align: (opts && opts.align) || 'justify',
+          lineGap: 3,
+          paragraphGap: 0
+        }, opts || {}));
         first = false;
       }
       doc.font('fonts/latin');
@@ -181,13 +201,17 @@ async function buildPDF() {
       }
     }
 
-    /* skip copyright until later position: emit in order (copyright near top works fine) */
     let sawToc = false;
     for (const it of content) {
-      if (it.t === 'h1' && /Table of Contents/i.test(it.x)) { sawToc = true; doc.addPage(); }
+      // keep a heading from ending an orphaned page: if <130pt left, push to new page
+      const W = 432 - 108;
+      if (it.t === 'h1' && /Table of Contents/i.test(it.x)) { sawToc = true; doc.addPage(); continue; }
       if (it.t === 'h1' && /Foreword/i.test(it.x)) doc.addPage();
+      if ((it.t === 'h1' || it.t === 'h2') && doc.y > 470) doc.addPage();
       emit(it);
     }
+    /* suppress folios on front-matter-ish first pages */
+    pageNoSuppress = false;
 
     /* final contact page */
     doc.addPage().fillColor(INK).font('fonts/bold').fontSize(15).text('KEEP GOING', { align: 'center', paragraphGap: 10 });
