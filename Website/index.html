@@ -36,15 +36,12 @@
       --text-sub: rgba(255,255,255,0.85);
     }
     * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
-    html { scroll-behavior: smooth; overflow-x: hidden; overscroll-behavior: none; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
     body {
       font-family: 'Poppins', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
       background: radial-gradient(ellipse 120% 80% at 50% 0%, #1a0b2e 0%, #050510 60%, #000000 100%);
       color: var(--text);
       line-height: 1.7;
-      overflow-x: hidden;
-      touch-action: pan-y;
-      overscroll-behavior: none;
       -webkit-text-size-adjust: 100%;
     }
     .speaking {
@@ -764,6 +761,9 @@
         navigator.serviceWorker.register('./sw.js').catch(function(){});
       });
     }
+    window.addEventListener('pageshow', function(e) {
+      if (e.persisted) { try { closeModal(); } catch(err) {} }
+    });
   </script>
 </body>
 </html>
