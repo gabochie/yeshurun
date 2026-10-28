@@ -694,10 +694,14 @@
       document.getElementById('leadModal').classList.remove('open');
       document.body.style.overflow = '';
     }
-    function showSuccess(name) {
+    function showSuccess(name, res) {
       document.getElementById('leadForm').style.display = 'none';
       var s = document.getElementById('leadSuccess');
-      document.getElementById('successMsg').textContent = (name ? (name + ', y') : 'Y') + 'our free preview is unlocked. A copy is also on its way to your email.';
+      var lead = name ? (name + ', y') : 'Y';
+      var tail = (res && res.emailed)
+        ? 'our free preview is on its way to your email.'
+        : 'our free preview is unlocked — tap below to start reading.';
+      document.getElementById('successMsg').textContent = lead + tail;
       s.style.display = 'block';
     }
 
@@ -717,15 +721,15 @@
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: name, email: email, whatsapp: wa, source: 'landing-modal', path: location.pathname })
-      }).catch(function(){ });
+      }).then(function(r) { return r.ok ? r.json() : null; }).catch(function(){ return null; });
       var nf = fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: body
       }).catch(function(){ });
-      Promise.all([fn, nf]).finally(function(){ finishLead(); });
+      Promise.all([fn, nf]).then(function(vals){ finishLead(vals[0]); }, function(){ finishLead(null); });
 
-      function finishLead() {
+      function finishLead(res) {
         try { localStorage.setItem('yeshurun_lead', JSON.stringify({ name: name, email: email, wa: wa, t: Date.now() })); } catch(e) {}
         if (wa) {
           var waJoin = document.getElementById('waJoin');
@@ -733,7 +737,7 @@
             waJoin.href = 'https://wa.me/?text=' + encodeURIComponent('🙌 ' + (name || 'Friend') + ", here's the free preview of Yeshurun: " + location.origin + location.pathname.replace('index.html','preview.html'));
           }
         }
-        showSuccess(name);
+        showSuccess(name, res);
       }
     }
 
@@ -764,6 +768,7 @@
     window.addEventListener('pageshow', function(e) {
       if (e.persisted) { try { closeModal(); } catch(err) {} }
     });
+    if (location.hash === '#free') { try { openModal(null); } catch(e) {} }
   </script>
 </body>
 </html>
