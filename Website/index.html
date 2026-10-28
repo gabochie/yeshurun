@@ -539,25 +539,6 @@
       <span class="bb-ico">🎁</span>
       <span>Free Book</span>
     </a>
-    <a href="javascript:void(0)" class="bb-item" onclick="sharePage()">
-      <span class="bb-ico">🚀</span>
-      <span>Share</span>
-    </a>
-  </nav>
-
-  <nav class="bottombar">
-    <a href="./index.html" class="bb-item active">
-      <span class="bb-ico">📖</span>
-      <span>Home</span>
-    </a>
-    <a href="./preview.html" class="bb-item">
-      <span class="bb-ico">👀</span>
-      <span>Preview</span>
-    </a>
-    <a href="javascript:void(0)" onclick="openModal(event)" class="bb-item primary">
-      <span class="bb-ico">🎁</span>
-      <span>Free Book</span>
-    </a>
     <a href="javascript:void(0)" class="bb-item" id="listenBtn" onclick="toggleListen()">
       <span class="bb-ico" id="listenIco">🔊</span>
       <span id="listenLbl">Listen</span>
@@ -569,6 +550,29 @@
   </nav>
 
   <script>
+    var LINKS = {
+      selar: 'INSERT_SELAR_LINK',
+      kdp: 'INSERT_KDP_LINK',
+      website: 'INSERT_WEBSITE_LINK',
+      whatsapp: 'INSERT_WHATSAPP_CONTACT'
+    };
+
+    function isPlaceholder(u) { return !u || u.indexOf('INSERT_') === 0; }
+
+    (function applyLinks() {
+      if (!isPlaceholder(LINKS.selar)) document.querySelectorAll('a[href="INSERT_SELAR_LINK"]').forEach(function(a){ a.href = LINKS.selar; });
+      if (!isPlaceholder(LINKS.kdp)) document.querySelectorAll('a[href="INSERT_KDP_LINK"]').forEach(function(a){ a.href = LINKS.kdp; });
+      if (!isPlaceholder(LINKS.website)) document.querySelectorAll('a[href="INSERT_WEBSITE_LINK"]').forEach(function(a){ a.href = LINKS.website; a.target = '_blank'; a.rel = 'noopener'; });
+    })();
+
+    document.addEventListener('click', function(e) {
+      var a = e.target.closest && e.target.closest('a[href^="INSERT_"]');
+      if (a && a.id !== 'waJoin') {
+        e.preventDefault();
+        openModal(e);
+      }
+    }, true);
+
     var TTS = { playing: false, items: [], idx: 0 };
 
     function buildList() {
@@ -673,9 +677,17 @@
       btn.disabled = true;
       btn.textContent = 'SENDING...';
       var body = 'form-name=leads&name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '&whatsapp=' + encodeURIComponent(wa) + '&source=bottombar-hero&path=' + encodeURIComponent(location.pathname);
-      fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
-        .catch(function(){ /* saved locally when offline/pre-deploy */ })
-        .finally(function(){ finishLead(); });
+      var fn = fetch('/.netlify/functions/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: name, email: email, whatsapp: wa, source: 'landing-modal', path: location.pathname })
+      }).catch(function(){ });
+      var nf = fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body
+      }).catch(function(){ });
+      Promise.all([fn, nf]).finally(function(){ finishLead(); });
 
       function finishLead() {
         try { localStorage.setItem('yeshurun_lead', JSON.stringify({ name: name, email: email, wa: wa, t: Date.now() })); } catch(e) {}

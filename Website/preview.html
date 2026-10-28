@@ -341,6 +341,28 @@
   </nav>
 
   <script>
+    var LINKS = {
+      selar: 'INSERT_SELAR_LINK',
+      kdp: 'INSERT_KDP_LINK',
+      website: 'INSERT_WEBSITE_LINK'
+    };
+
+    function isPlaceholder(u) { return !u || u.indexOf('INSERT_') === 0; }
+
+    (function applyLinks() {
+      if (!isPlaceholder(LINKS.selar)) document.querySelectorAll('a[href="INSERT_SELAR_LINK"]').forEach(function(a){ a.href = LINKS.selar; });
+      if (!isPlaceholder(LINKS.kdp)) document.querySelectorAll('a[href="INSERT_KDP_LINK"]').forEach(function(a){ a.href = LINKS.kdp; });
+      if (!isPlaceholder(LINKS.website)) document.querySelectorAll('a[href="INSERT_WEBSITE_LINK"]').forEach(function(a){ a.href = LINKS.website; a.target = '_blank'; a.rel = 'noopener'; });
+    })();
+
+    document.addEventListener('click', function(e) {
+      var a = e.target.closest && e.target.closest('a[href^="INSERT_"]');
+      if (a) {
+        e.preventDefault();
+        alert('The full book is launching soon! Tap the Free Book button on the Home page to join the list and be first to know.');
+      }
+    }, true);
+
     var TTS = { playing: false, items: [], idx: 0 };
 
     function buildList() {

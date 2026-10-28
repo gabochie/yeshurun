@@ -1,4 +1,4 @@
-const CACHE_NAME = 'yeshurun-preview-v3';
+const CACHE_NAME = 'yeshurun-preview-v4';
 const ASSETS = [
   './index.html',
   './preview.html',
@@ -20,6 +20,7 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+  if (event.request.method !== 'GET' || event.request.url.includes('/.netlify/')) return;
   event.respondWith(
     caches.match(event.request).then((cached) => {
       if (cached) return cached;
