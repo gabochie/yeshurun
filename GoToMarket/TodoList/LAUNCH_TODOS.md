@@ -33,13 +33,17 @@ Work through Top→Bottom. Boxes marked 💰 = takes money; 🔗 = needs info fr
 - [ ] Price $2.99–$4.99, select 70% royalty, KDP Select (optional)
 - [ ] Publish. Repeat for Paperback later (1800x2700 cover + same doc)
 
-## 5. CREATE THE SELL FILES (breaking task — do first!)
-The manuscript (`Book/Manuscript/Yeshurun-Final-Manuscript.md`) only exists as Markdown.
-Currently exported only .doc (KDP-acceptable). For Selar you need reader-ready files:
-- [ ] Convert to PDF (Pandoc/Word export/Canva) → `Book/Exports/Yeshurun.pdf`
-- [ ] Convert to EPUB (Pandoc or Scrivener/Atticus) → `Book/Exports/Yeshurun-epub`
-- [ ] Put both in Book/Exports/
-- [ ] Optional: add a "thank-you" first page & review-ask last page into the *direct edition*
+## 5. CREATE THE SELL FILES ✅ DONE (2026-10-28)
+- [x] `Book/Selar/Yeshurun-The-Upright-One.pdf` (6"x9", Hebrew included, contact page filled)
+- [x] `Book/Selar/Yeshurun-The-Upright-One.epub` (EPUB 3, real Hebrew spans, chapter nav)
+- [x] Portrait covers generated: `Book/Selar/cover/Yeshurun-Cover-Selar.jpg` (1600x2560)
+      + `Book/Cover/Yeshurun_Cover_1800x2700.jpg` (old 1600x2560 file was mislabeled
+      landscape — replaced with real portrait)
+- [x] Upload guide: `Book/Selar/README_UPLOAD.txt`; listing copy: `Book/Selar/description/Selar-Description.txt`
+- [x] Contacts wired into all pages: gabochie@gmail.com · wa.me/233243262019 · @gideonabochie
+      P.O. Box SK2125 in legal pages
+- Style guide (tokens used everywhere): `Website/STYLE_GUIDE.md`
+- Rebuild anytime with: `node Book/Selar/build-package.js`
 
 ## 6. Host files securely? — NO self-hosting needed
 - Do NOT put sell files on Netlify (no access control there).

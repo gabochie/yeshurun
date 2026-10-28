@@ -560,6 +560,12 @@
 
   <footer class="footer">
     <p>© 2026 Gideon Abochie • Yeshurun: The Upright One</p>
+    <p style="margin-top:10px;font-size:12px;letter-spacing:0.08em;">
+      <a href="https://instagram.com/gideonabochie" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.55);text-decoration:none;">Instagram</a> ·
+      <a href="https://tiktok.com/@gideonabochie" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.55);text-decoration:none;">TikTok</a> ·
+      <a href="https://youtube.com/@gideonabochie" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.55);text-decoration:none;">YouTube</a> ·
+      <a href="mailto:gabochie@gmail.com" style="color:rgba(255,255,255,0.55);text-decoration:none;">Email</a>
+    </p>
     <p style="margin-top:6px;font-size:11px;"><a href="./privacy.html" style="color:rgba(255,255,255,0.5);">Privacy</a> · <a href="./terms.html" style="color:rgba(255,255,255,0.5);">Terms</a> · <a href="./refund.html" style="color:rgba(255,255,255,0.5);">Refunds</a></p>
   </footer>
 
@@ -591,7 +597,7 @@
       selar: 'INSERT_SELAR_LINK',
       kdp: 'INSERT_KDP_LINK',
       website: 'INSERT_WEBSITE_LINK',
-      whatsapp: 'INSERT_WHATSAPP_CONTACT'
+      whatsapp: 'https://wa.me/233243262019'
     };
 
     function isPlaceholder(u) { return !u || u.indexOf('INSERT_') === 0; }
@@ -671,6 +677,7 @@
       if (!isPlaceholder(LINKS.selar)) document.querySelectorAll('a[href="INSERT_SELAR_LINK"]').forEach(function(a){ a.href = LINKS.selar; });
       if (!isPlaceholder(LINKS.kdp)) document.querySelectorAll('a[href="INSERT_KDP_LINK"]').forEach(function(a){ a.href = LINKS.kdp; });
       if (!isPlaceholder(LINKS.website)) document.querySelectorAll('a[href="INSERT_WEBSITE_LINK"]').forEach(function(a){ a.href = LINKS.website; a.target = '_blank'; a.rel = 'noopener'; });
+      if (!isPlaceholder(LINKS.whatsapp)) document.querySelectorAll('a[href="INSERT_WHATSAPP_CONTACT"]').forEach(function(a){ a.href = LINKS.whatsapp; a.target = '_blank'; a.rel = 'noopener'; });
     })();
 
     document.addEventListener('click', function(e) {

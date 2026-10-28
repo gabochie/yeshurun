@@ -368,7 +368,8 @@
     var LINKS = {
       selar: 'INSERT_SELAR_LINK',
       kdp: 'INSERT_KDP_LINK',
-      website: 'INSERT_WEBSITE_LINK'
+      website: 'INSERT_WEBSITE_LINK',
+      whatsapp: 'https://wa.me/233243262019'
     };
 
     function isPlaceholder(u) { return !u || u.indexOf('INSERT_') === 0; }
@@ -377,6 +378,7 @@
       if (!isPlaceholder(LINKS.selar)) document.querySelectorAll('a[href="INSERT_SELAR_LINK"]').forEach(function(a){ a.href = LINKS.selar; });
       if (!isPlaceholder(LINKS.kdp)) document.querySelectorAll('a[href="INSERT_KDP_LINK"]').forEach(function(a){ a.href = LINKS.kdp; });
       if (!isPlaceholder(LINKS.website)) document.querySelectorAll('a[href="INSERT_WEBSITE_LINK"]').forEach(function(a){ a.href = LINKS.website; a.target = '_blank'; a.rel = 'noopener'; });
+      if (!isPlaceholder(LINKS.whatsapp)) document.querySelectorAll('a[href="INSERT_WHATSAPP_CONTACT"]').forEach(function(a){ a.href = LINKS.whatsapp; a.target = '_blank'; a.rel = 'noopener'; });
     })();
 
     document.addEventListener('click', function(e) {
