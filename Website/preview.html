@@ -67,12 +67,15 @@
       --max: 620px;
     }
     * { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
-    html { scroll-behavior:smooth; }
+    html { scroll-behavior:smooth; overflow-x:hidden; overflow-x:clip; scrollbar-gutter:stable; }
     body {
       font-family:'Poppins', -apple-system, system-ui, sans-serif;
       background:linear-gradient(180deg, #0b0722 0%, var(--bg) 360px, var(--bg) 100%);
       color:var(--ink);
       line-height:1.8;
+      overflow-x:hidden;
+      overflow-x:clip;
+      overflow-wrap:break-word;
       -webkit-text-size-adjust:100%;
     }
 

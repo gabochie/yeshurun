@@ -118,6 +118,23 @@ Voice IS right: prophetic, direct, Rwanda-notebook energy, Scripture-anchored, s
 
 **Verification (automated, 2026-10-29):** all inline JS vm-compiled clean (index/preview/thankyou), JSON-LD parses, sw.js `vm.Script` clean, all 9 woff2 files valid (`wOF2` magic), all `fonts/` hrefs resolve to existing files, exactly 1 `AB` definition in index, noscript fallback present, zero googleapis.com references left. Final visual re-check rides along with B4 (Netlify + GA4 DebugView) — CLS expectation ≈ 0 now.
 
+---
+
+# AUDIT ROUND 4 — critical interaction-wobble + scroll-axis pass (2026-10-29)
+
+Agent fixes (ALL DONE + verified with a real headless Chromium):
+
+| # | Finding | Severity | Fix |
+|---|---|---|---|
+| X1 | `.speaking` TTS highlight on index added `border-left:3px + padding-left:12px` → live geometry change; every Listen highlight re-wrapped text and shifted all content below (the interaction wobble) | HIGH | ✅ Geometry-neutral: background tint + `outline` (no layout impact), same for h1/h2. preview.html already was layout-neutral (background-only) |
+| X2 | Modal open sets `body.overflow:hidden` → on desktop the scrollbar disappears → page content re-centers horizontally (classic CLS offender) | MED | ✅ `scrollbar-gutter: stable` on html (index/preview/thankyou) — gutter reserved permanently, zero reflow |
+| X3 | Horizontal-scroll guard missing entirely on preview/thankyou; index guarded on html only (iOS edge panning) | MED | ✅ `html,body { overflow-x: clip }` (with `hidden` fallback) on all 3 pages → horizontal pan/scroll impossible; vertical-only scrolling enforced |
+| X4 | No `overflow-wrap: break-word` → long tokens (emails, pasted text) could force horizontal scroll | LOW | ✅ Added on all 3 pages |
+| X5 | Bottom bar inconsistency the user flagged: landing bar was a floating rounded pill (18px radius, gold-glow border, desktop detached via margin-bottom) vs preview's flat solid bottom-anchored slab | UX | ✅ Unified to preview recipe: flush bottom, no radius, hairline top border, same blur 14px/opacity .92, same item metrics (10px/19px icons), desktop detach rule removed |
+
+**Verification (headless Chromium 136, Alpine, 2026-10-29):** measured on file:// with CLS PerformanceObserver + scrollWidth checks at mobile-390 (DPR3), small-320 (DPR2), desktop-1440, CPU-rich pages loaded with fonts (self-hosted ok). Results: **CLS = 0.0000 on all page/viewport combos; after interactions (modal open/close, smooth anchor scroll, TTS toggle) CLS ≤ 0.0014, horizontal scroll = NO in every state** (`CLEAN: no hScroll, CLS<=0.02 everywhere`). Thankyou shows fonts="pending" only for the unused Space Grotesk probe — its Poppins loads, CLS stays 0.
+
+
 
 ---
 
