@@ -1,12 +1,12 @@
 # LAUNCH TODOS — Manual Steps (print or check off)
 
-Last updated: 2026-10-28. Site code is DONE & pushed. Everything below is done *outside* this repo.
+Last updated: 2026-10-28 (after Selar URL + GA ID wiring). Everything below is done *outside* this repo.
 Work through Top→Bottom. Boxes marked 💰 = takes money; 🔗 = needs info from you.
 
 ## 1. Google Analytics (10 min) — see README_ABN guide in Website/README.md
 - [ ] Create GA4 property (GMT/Accra) for https://yes.gabochie.com
 - [ ] Copy Measurement ID (G-...)
-- [ ] 🔗 Paste ID into `Website/index.html` and `Website/thankyou.html` (replace INSERT_GA_ID)
+- [x] 🔗 Paste ID into `Website/index.html`, `Website/thankyou.html` + `Website/preview.html` — `G-R93YEWBBFH` wired in all three (2026-10-28). Note: Google Tags also shows `GT-MQPX8T5H` — that is the auto-created Google tag under this stream; it's normal, no duplicate.
 - [ ] Create custom dimensions: `variant`, `position` (Admin → Custom definitions → Event scope)
 - [ ] Test with `https://yes.gabochie.com/?ga_debug=1` in DebugView
 - [ ] Mark `purchase` as key event (History: Admin → Events)
@@ -19,11 +19,11 @@ Work through Top→Bottom. Boxes marked 💰 = takes money; 🔗 = needs info fr
 - [ ] Price: $4.99 / GHS equivalent
 - [ ] Set **redirect after purchase** → `https://yes.gabochie.com/thankyou.html`
 - [ ] Add legal links into product description: /privacy.html /terms.html /refund.html
-- [ ] Test-buy yourself with mobile money 💰 (small amount)
-- [ ] 🔗 Copy product URL → replace INSERT_SELAR_LINK in `index.html` (2 places)
+- [ ] 💰 Test-buy yourself with mobile money (small amount) — then verify: instant download + thank-you redirect to https://yes.gabochie.com/thankyou.html + GA4 `purchase` event fires
+- [x] 🔗 Product URL wired: `https://selar.com/2q14gn631u` in `index.html` (2 places) + `preview.html` (2 places) — 2026-10-28
 
-## 3. Legal contact (5 min) 🔗
-- [ ] Replace `INSERT_CONTACT_EMAIL` (privacy, terms, refund pages — 3 pages, 1 email each; use an email you check DAILY)
+## 3. Legal contact (5 min) 🔗 ✅ DONE
+- [x] `INSERT_CONTACT_EMAIL` filled in all 3 legal pages — gabochie@gmail.com exists in privacy.html, refund.html, terms.html (verified 2026-10-28)
 
 ## 4. Publishing to KDP (45 min, Amazon reviews 24–72 h)
 - [ ] Create kdp.amazon.com account (use real name + tax info + bank)
@@ -52,9 +52,9 @@ Work through Top→Bottom. Boxes marked 💰 = takes money; 🔗 = needs info fr
 - KDP hosts the Kindle/paperback on Amazon with their own DRM-ish protections.
 
 ## 7. Traffic launch (day of going live)
-- [ ] Replace INSERT_WHATSAPP_CONTACT in index.html + thankyou.html (wa.me/<number>?text=...)
+- [x] WhatsApp contact link — `index.html` placeholder rewrites at load from `LINKS.whatsapp` = `https://wa.me/233243262019` (no manual edit needed; verified 2026-10-28)
 - [ ] Post the 4 variant-tagged links (see chat guide): WhatsApp status, WhatsApp groups (adult/parents),
-      IG bio, TikTok bio, first Reels/TikToks
+      IG bio, TikTok bio, first Reels/TikToks — use `https://yes.gabochie.com/?v=cover1|cover2|cover2a|cover3`
 - [ ] Ask 5 friends to test-buy / preview for social proof
 - [ ] Check GA realtime + Selar dashboard that evening
 

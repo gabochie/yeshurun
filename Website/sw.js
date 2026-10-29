@@ -1,13 +1,27 @@
-const CACHE_NAME = 'yeshurun-preview-v8';
+const CACHE_NAME = 'yeshurun-preview-v10';
 const ASSETS = [
   './index.html',
   './preview.html',
   './manifest.json',
   './cover.jpg',
+  './covers/cover-1.jpg',
+  './covers/cover-2.jpg',
+  './covers/cover-2a.jpg',
+  './covers/cover-3.jpg',
+  './fonts/fonts.css',
+  './fonts/spacegrotesk-var.woff2',
+  './fonts/poppins-400.woff2',
+  './fonts/poppins-600.woff2',
+  './fonts/poppins-700.woff2',
+  './fonts/poppins-800.woff2',
+  './fonts/poppins-900.woff2',
+  './fonts/poppins-italic-400.woff2',
+  './icon-192.png',
+  './icon-512.png',
+  './maskable-512.png',
+  './apple-touch-icon.png',
   './icon.svg'
 ];
-
-const HTML_PAGES = ['./', './index.html', './preview.html'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS)).catch(()=>{}));

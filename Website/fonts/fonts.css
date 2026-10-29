@@ -1,0 +1,58 @@
+/* Self-hosted latin subsets (source: Google Fonts v24/v22, OFL license) */
+/* font-display: optional = zero layout reflow; system fallback only if font misses the ~100ms block window */
+
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: optional;
+  src: url(./spacegrotesk-var.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url(./poppins-400.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 400;
+  font-display: optional;
+  src: url(./poppins-italic-400.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: optional;
+  src: url(./poppins-600.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: optional;
+  src: url(./poppins-700.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  font-display: optional;
+  src: url(./poppins-800.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 900;
+  font-display: optional;
+  src: url(./poppins-900.woff2) format('woff2');
+}

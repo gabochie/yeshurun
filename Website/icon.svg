@@ -10,7 +10,11 @@
     </linearGradient>
   </defs>
   <rect width="512" height="512" rx="96" fill="url(#g)"/>
-  <circle cx="256" cy="256" r="180" fill="none" stroke="url(#gold)" stroke-width="6" opacity="0.55"/>
-  <text x="256" y="300" font-family="Georgia, serif" font-size="200" font-weight="700" fill="url(#gold)" text-anchor="middle">י</text>
-  <text x="256" y="420" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#F7F3E9" text-anchor="middle" letter-spacing="6">YESHURUN</text>
+  <circle cx="256" cy="248" r="168" fill="none" stroke="url(#gold)" stroke-width="6" opacity="0.55"/>
+  <path d="M 218 262 Q 236 208 318 236 L 318 340" fill="none" stroke="url(#gold)" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="url(#gold)">
+    <rect x="196" y="404" width="36" height="9" rx="4.5"/>
+    <rect x="242" y="404" width="74" height="9" rx="4.5"/>
+    <rect x="280" y="404" width="36" height="9" rx="4.5"/>
+  </g>
 </svg>

@@ -6,26 +6,77 @@
   <meta name="theme-color" content="#050510">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>Are You Still In Your Yaakov Season? | Free Preview</title>
+  <title>Are You Still In Your Yaakov Season? | Yeshurun: The Upright One — Free Preview</title>
   <meta name="description" content="God isn't finished with your story. Read the free 5-minute preview of Yeshurun: The Upright One by Gideon Abochie — from Yaakov to Israel to who God says you already are.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Yeshurun: The Upright One">
   <meta property="og:title" content="Are You Still In Your Yaakov Season?">
   <meta property="og:description" content="Read the free preview of Yeshurun: The Upright One by Gideon Abochie — the fight you're in is leading you to who God has called you to be.">
   <meta property="og:image" content="https://yes.gabochie.com/cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="Yeshurun: The Upright One book cover">
   <meta property="og:url" content="https://yes.gabochie.com/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Are You Still In Your Yaakov Season?">
   <meta name="twitter:description" content="Read the free preview of Yeshurun: The Upright One by Gideon Abochie.">
   <meta name="twitter:image" content="https://yes.gabochie.com/cover.jpg">
+  <link rel="canonical" href="https://yes.gabochie.com/">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Space+Grotesk:wght@400;600;700&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Space+Grotesk:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Space+Grotesk:wght@400;600;700&display=swap"></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "Yeshurun: The Upright One",
+    "author": { "@type": "Person", "name": "Gideon Abochie" },
+    "inLanguage": "en",
+    "bookFormat": "https://schema.org/EBook",
+    "description": "A study of Israel's ideal identity — the four appearances of Yeshurun in the Hebrew Bible, and the journey from Yaakov to Israel to Yeshurun.",
+    "offers": {
+      "@type": "Offer",
+      "price": "4.99",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://selar.com/2q14gn631u"
+    }
+  }
+  </script>
+  <link rel="preload" as="font" type="font/woff2" href="./fonts/spacegrotesk-var.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="./fonts/poppins-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="./fonts/poppins-800.woff2" crossorigin>
+  <link rel="stylesheet" href="./fonts/fonts.css">
+  <script>
+    var AB = (function() {
+      var VARIANTS = [
+        { id: 'cover1',   src: './covers/cover-1.jpg',  pos: 'classic-study' },
+        { id: 'cover2',   src: './covers/cover-2.jpg',  pos: 'genz-way' },
+        { id: 'cover2a',  src: './covers/cover-2a.jpg', pos: 'teen-faith' },
+        { id: 'cover3',   src: './covers/cover-3.jpg',  pos: 'kids-parents' }
+      ];
+      function normalize(v) {
+        var k = String(v || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+        var found = VARIANTS.filter(function(x){ return x.id.replace(/[^a-z0-9]/g, '') === k; });
+        return found[0] || null;
+      }
+      function pick() {
+        try {
+          var q = new URLSearchParams(location.search);
+          var force = normalize(q.get('v') || q.get('utm_content'));
+          if (force) return force.id;
+          var saved = normalize(localStorage.getItem('yeshurun_variant'));
+          if (saved) return saved.id;
+          return VARIANTS[Math.floor(Math.random() * VARIANTS.length)].id;
+        } catch (err) { return VARIANTS[Math.floor(Math.random() * VARIANTS.length)].id; }
+      }
+      var chosen = pick();
+      try { localStorage.setItem('yeshurun_variant', chosen); } catch (err) {}
+      var meta = VARIANTS.filter(function(v){ return v.id === chosen; })[0] || {};
+      return { variant: chosen, pos: meta.pos || chosen, src: meta.src || './cover.jpg' };
+    })();
+  </script>
   <style>
     :root {
       --bg: #050510;
@@ -126,7 +177,7 @@
     }
     .cover-frame {
       position: relative;
-      aspect-ratio: 437 / 630;
+      aspect-ratio: 2 / 3;
       border-radius: 14px;
       overflow: hidden;
       box-shadow: 0 18px 50px rgba(0,0,0,0.75), 0 0 70px rgba(168,85,247,0.3);
@@ -147,7 +198,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: 52.2% 50%;
+      object-position: 50% 50%;
       background: #0a0a18;
     }
     .cta-primary {
@@ -254,7 +305,7 @@
     .footer {
       text-align: center;
       padding: 30px 18px calc(110px + env(safe-area-inset-bottom));
-      opacity: 0.4;
+      opacity: 0.55;
       font-size: 12px;
       letter-spacing: 0.2em;
       text-transform: uppercase;
@@ -297,6 +348,11 @@
     .bb-item.active { color: var(--gold); }
     .bb-item.primary { color: #000; background: linear-gradient(135deg, #FFD93B 0%, #F59E0B 100%); font-weight: 800;       box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 0 28px rgba(255,217,59,0.3); }
     @media (min-width: 700px) { .bottombar { border-radius: 18px; margin-bottom: 14px; } }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .speaking { animation: none; }
+      * { transition-duration: 0.01ms !important; }
+    }
     .modal-backdrop {
       position: fixed;
       inset: 0;
@@ -449,7 +505,8 @@
     </p>
     <div class="cover-wrap">
       <div class="cover-frame">
-        <img class="cover-img" id="heroCover" src="./cover.jpg" alt="Yeshurun book cover" loading="eager" fetchpriority="high" decoding="async">
+        <noscript><img class="cover-img" src="./covers/cover-1.jpg" alt="Yeshurun book cover"></noscript>
+        <img class="cover-img" id="heroCover" alt="Yeshurun book cover" decoding="async">
       </div>
     </div>
     <a href="#preview" class="cta-primary" onclick="openModal(event)">
@@ -502,11 +559,11 @@
     <div class="cta-final-inner">
       <h2>WANT TO GO DEEPER?</h2>
       <p>The full book <strong>Yeshurun: The Upright One</strong> by Gideon Abochie reveals your next step in this journey.</p>
-      <a href="INSERT_SELAR_LINK" class="cta-primary" onclick="trackBuy()">
+      <a href="https://selar.com/2q14gn631u" class="cta-primary" onclick="trackBuy()">
         <span>GET THE FULL BOOK NOW</span>
         <span style="font-size: 22px;">→</span>
     </a>
-    <p class="cta-subtext" style="margin-top: 18px;">Best for Ghana & African Diaspora • Instant Digital Access • $4.99</p>
+    <p class="cta-subtext" style="margin-top: 18px;">$4.99 • Mobile money & card accepted • Instant download</p>
     </div>
   </section>
 
@@ -519,10 +576,13 @@
   </section>
 
   <form name="leads" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="bot-field" tabindex="-1" autocomplete="off">
     <input type="text" name="name">
     <input type="email" name="email">
     <input type="tel" name="whatsapp">
     <input type="text" name="source">
+    <input type="text" name="variant">
+    <input type="text" name="path">
   </form>
 
   <div class="modal-backdrop" id="leadModal" onclick="if(event.target===this)closeModal()">
@@ -530,8 +590,9 @@
       <button type="button" class="close-x" aria-label="Close" onclick="closeModal()">✕</button>
       <div id="leadForm">
         <h3>Unlock the <span class="gradient">FREE PREVIEW</span></h3>
-        <p class="lead-note">Where should we send your free preview? Grab it now — plus be first to know when the full book drops.</p>
+        <p class="lead-note">Where should we send your free preview? Read it in under 5 minutes — and join the Yeshurun reader community.</p>
         <form id="leadFormEl" onsubmit="submitLead(); return false">
+        <input type="text" name="bot-field" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;opacity:0;">
         <input type="text" id="fName" name="name" placeholder="Your first name" autocomplete="given-name" aria-label="Your first name">
         <input type="email" id="fEmail" name="email" placeholder="Your email *" inputmode="email" autocomplete="email" enterkeyhint="next" aria-label="Your email">
         <div class="whatsapp-field">
@@ -540,23 +601,34 @@
         </div>
         <button type="submit" class="submit-btn" id="leadSubmit">SEND ME THE PREVIEW →</button>
         </form>
-        <a href="javascript:void(0)" class="skip" onclick="closeModal()">No thanks, just show me the preview</a>
+        <a href="./preview.html" class="skip">No thanks, just show me the preview 👀</a>
         <p class="priv-note">🔒 We keep it 100% — your info is never shared or sold. <a href="./privacy.html" style="color:rgba(255,255,255,0.55);text-decoration:underline;">Privacy Policy</a></p>
       </div>
       <div class="modal-success" id="leadSuccess">
         <div class="big">🎉</div>
         <h4>You're in!</h4>
         <p id="successMsg">Your free preview is unlocked. A copy is also on its way to your email.</p>
-        <a href="INSERT_SELAR_LINK" class="success-btn gold" onclick="trackBuy()"><span>🛒 GET THE FULL BOOK NOW</span><span>→</span></a>
+        <a href="https://selar.com/2q14gn631u" class="success-btn gold" onclick="trackBuy()"><span>🛒 GET THE FULL BOOK NOW</span><span>→</span></a>
         <a href="./preview.html" class="success-btn" style="background:rgba(255,255,255,0.08);color:#fff;border:1px solid rgba(255,217,59,0.55)"><span>or start with the FREE PREVIEW</span><span>👀</span></a>
         <a id="waJoin" href="INSERT_WHATSAPP_CONTACT" target="_blank" rel="noopener" class="success-btn wa">
           <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.7 6.4L3 29l6.8-1.7c1.9 1 4 1.6 6.2 1.6 7.2 0 13-5.8 13-13S23.2 3 16 3zm0 23.8c-2 0-3.9-.5-5.5-1.5l-.4-.2-4 1 1.1-3.9-.3-.4A10.7 10.7 0 015.2 16c0-6 4.9-10.8 10.8-10.8S26.8 10 26.8 16 21.9 26.8 16 26.8zm6.1-8.1c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.5s1.1 2.9 1.3 3.1c.2.2 2.2 3.4 5.3 4.7.7.3 1.3.5 1.8.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4l-.5-.3z"/></svg>
-          <span>JOIN THE WHATSAPP COMMUNITY</span>
+          <span>💬 MESSAGE GIDEON ON WHATSAPP</span>
         </a>
-        <p class="priv-note">Everyone who joins gets our weekly WhatsApp devo. No spam.</p>
+        <p class="priv-note">Everyone who connects on WhatsApp gets our weekly devo. No spam.</p>
       </div>
     </div>
   </div>
+
+  <section class="section" id="reviews" hidden>
+    <div class="section-inner" style="text-align:center;">
+      <h2>What readers are saying</h2>
+      <div class="review-row" style="display:flex;flex-direction:column;gap:14px;">
+        <div class="review" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,217,59,0.3);border-radius:16px;padding:18px 20px;">“<span class="rv-quote">REVIEW_QUOTE_1</span>”<br><span style="font-size:13px;opacity:0.65;">— <span class="rv-name">REVIEW_NAME_1</span></span></div>
+        <div class="review" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,217,59,0.3);border-radius:16px;padding:18px 20px;">“<span class="rv-quote">REVIEW_QUOTE_2</span>”<br><span style="font-size:13px;opacity:0.65;">— <span class="rv-name">REVIEW_NAME_2</span></span></div>
+        <div class="review" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,217,59,0.3);border-radius:16px;padding:18px 20px;">“<span class="rv-quote">REVIEW_QUOTE_3</span>”<br><span style="font-size:13px;opacity:0.65;">— <span class="rv-name">REVIEW_NAME_3</span></span></div>
+      </div>
+    </div>
+  </section>
 
   <footer class="footer">
     <p>© 2026 Gideon Abochie • Yeshurun: The Upright One</p>
@@ -578,9 +650,9 @@
       <span class="bb-ico">👀</span>
       <span>Preview</span>
     </a>
-    <a href="javascript:void(0)" onclick="openModal(event)" class="bb-item primary">
-      <span class="bb-ico">🎁</span>
-      <span>Free Book</span>
+    <a href="https://selar.com/2q14gn631u" onclick="trackBuy()" class="bb-item primary">
+      <span class="bb-ico">🛒</span>
+      <span>Get Book</span>
     </a>
     <a href="javascript:void(0)" class="bb-item" id="listenBtn" onclick="toggleListen()">
       <span class="bb-ico" id="listenIco">🔊</span>
@@ -594,7 +666,7 @@
 
   <script>
     var LINKS = {
-      selar: 'INSERT_SELAR_LINK',
+      selar: 'https://selar.com/2q14gn631u',
       kdp: 'INSERT_KDP_LINK',
       website: 'https://studio.gabochie.com',
       whatsapp: 'https://wa.me/233243262019'
@@ -604,8 +676,19 @@
 
     var GA_ID = 'G-R93YEWBBFH';
 
+    var GA_CONSENT_OK = (function() {
+      try {
+        var q = new URLSearchParams(location.search);
+        if (q.get('noanalytics') === '1') return false;
+        if (localStorage.getItem('yeshurun_noanalytics') === '1') return false;
+      } catch (err) {}
+      if (typeof navigator.doNotTrack === 'string' && navigator.doNotTrack === '1') return false;
+      return true;
+    })();
+
     (function initGA() {
       if (isPlaceholder(GA_ID)) return;
+      if (!GA_CONSENT_OK) return;
       var s = document.createElement('script');
       s.async = true;
       s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
@@ -614,34 +697,6 @@
       window.gtag = function(){ window.dataLayer.push(arguments); };
       window.gtag('js', new Date());
       window.gtag('config', GA_ID, { send_page_view: true, debug_mode: /[?&]ga_debug=1/.test(location.search) || undefined });
-    })();
-
-    var AB = (function() {
-      var VARIANTS = [
-        { id: 'cover1',   src: './covers/cover-1.jpg',  pos: 'classic-study' },
-        { id: 'cover2',   src: './covers/cover-2.jpg',  pos: 'genz-way' },
-        { id: 'cover2a',  src: './covers/cover-2a.jpg', pos: 'teen-faith' },
-        { id: 'cover3',   src: './covers/cover-3.jpg',  pos: 'kids-parents' }
-      ];
-      function normalize(v) {
-        var k = String(v || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-        var found = VARIANTS.filter(function(x){ return x.id.replace(/[^a-z0-9]/g, '') === k; });
-        return found[0] || null;
-      }
-      function pick() {
-        try {
-          var q = new URLSearchParams(location.search);
-          var force = normalize(q.get('v') || q.get('utm_content'));
-          if (force) return force.id;
-          var saved = normalize(localStorage.getItem('yeshurun_variant'));
-          if (saved) return saved.id;
-          return VARIANTS[Math.floor(Math.random() * VARIANTS.length)].id;
-        } catch (err) { return VARIANTS[Math.floor(Math.random() * VARIANTS.length)].id; }
-      }
-      var chosen = pick();
-      try { localStorage.setItem('yeshurun_variant', chosen); } catch (err) {}
-      var meta = VARIANTS.filter(function(v){ return v.id === chosen; })[0] || {};
-      return { variant: chosen, pos: meta.pos || chosen, src: meta.src || './cover.jpg' };
     })();
 
     function abFire(event) {
@@ -669,15 +724,17 @@
         fireOne();
       });
       img.src = AB.src;
-      fireOne();
     })();
 
 
     (function applyLinks() {
-      if (!isPlaceholder(LINKS.selar)) document.querySelectorAll('a[href="INSERT_SELAR_LINK"]').forEach(function(a){ a.href = LINKS.selar; });
+      if (!isPlaceholder(LINKS.selar)) document.querySelectorAll('a[href="https://selar.com/2q14gn631u"]').forEach(function(a){ a.href = LINKS.selar; });
       if (!isPlaceholder(LINKS.kdp)) document.querySelectorAll('a[href="INSERT_KDP_LINK"]').forEach(function(a){ a.href = LINKS.kdp; });
       if (!isPlaceholder(LINKS.website)) document.querySelectorAll('a[href="INSERT_WEBSITE_LINK"]').forEach(function(a){ a.href = LINKS.website; a.target = '_blank'; a.rel = 'noopener'; });
       if (!isPlaceholder(LINKS.whatsapp)) document.querySelectorAll('a[href="INSERT_WHATSAPP_CONTACT"]').forEach(function(a){ a.href = LINKS.whatsapp; a.target = '_blank'; a.rel = 'noopener'; });
+      document.querySelectorAll('a[href*="preview.html"]').forEach(function(a){
+        try { a.href = './preview.html?v=' + encodeURIComponent(AB.variant); } catch (err) {}
+      });
     })();
 
     document.addEventListener('click', function(e) {
@@ -736,6 +793,12 @@
 
     function toggleListen() {
       if (!('speechSynthesis' in window)) { alert('Read-aloud is not supported on this browser. Try Chrome. 🎧'); return; }
+      if (speechSynthesis.paused && (TTS.playing || TTS.idx > 0)) {
+        TTS.playing = true;
+        speechSynthesis.resume();
+        setBar(true);
+        return;
+      }
       if (TTS.playing) {
         speechSynthesis.cancel();
         TTS.playing = false;
@@ -743,7 +806,6 @@
         setBar(false);
         return;
       }
-      if (speechSynthesis.paused && TTS.idx > 0) { speechSynthesis.resume(); TTS.playing = true; setBar(true); return; }
       if (!TTS.items.length) buildList();
       TTS.playing = true;
       setBar(true);
@@ -796,7 +858,7 @@
       var btn = document.getElementById('leadSubmit');
       btn.disabled = true;
       btn.textContent = 'SENDING...';
-      var body = 'form-name=leads&name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '&whatsapp=' + encodeURIComponent(wa) + '&source=bottombar-hero&variant=' + encodeURIComponent(AB.variant) + '&path=' + encodeURIComponent(location.pathname);
+      var body = 'form-name=leads&bot-field=' + encodeURIComponent(document.getElementById('leadFormEl').querySelector('[name="bot-field"]').value) + '&name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '&whatsapp=' + encodeURIComponent(wa) + '&source=bottombar-hero&variant=' + encodeURIComponent(AB.variant) + '&path=' + encodeURIComponent(location.pathname);
       var fn = fetch('/.netlify/functions/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -814,7 +876,10 @@
         if (wa) {
           var waJoin = document.getElementById('waJoin');
           if (waJoin.getAttribute('href').indexOf('INSERT_') === 0) {
-            waJoin.href = 'https://wa.me/?text=' + encodeURIComponent('🙌 ' + (name || 'Friend') + ", here's the free preview of Yeshurun: " + location.origin + location.pathname.replace('index.html','preview.html'));
+            var previewPath = location.pathname.indexOf('index.html') !== -1
+              ? location.pathname.replace('index.html', 'preview.html')
+              : location.pathname.replace(/\/$/, '') + '/preview.html';
+            waJoin.href = 'https://wa.me/?text=' + encodeURIComponent('🙌 ' + (name || 'Friend') + ", here's the free preview of Yeshurun: " + location.origin + previewPath);
           }
         }
         showSuccess(name, res);

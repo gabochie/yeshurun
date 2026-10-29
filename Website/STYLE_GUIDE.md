@@ -67,7 +67,7 @@ Use values exactly as written. When in doubt, less color, more space.
 - A/B mapping: cover1 = classic-study · cover2 = genz-way · cover2a = teen-faith · cover3 = kids-parents
 
 ## 7. Links & routing (single source of truth)
-- Selar product: `INSERT_SELAR_LINK` (index.html) → replace with real URL after upload
+- Selar product: `https://selar.com/2q14gn631u` (index.html, preview.html — wired)
 - Post-purchase: `https://yes.gabochie.com/thankyou.html` (set in Selar dashboard)
 - WhatsApp/community: `https://wa.me/233243262019`
 - Socials: IG/TikTok/YouTube — `@gideonabochie`
